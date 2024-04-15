@@ -1,0 +1,5 @@
+﻿insert into PermisosModuloAtributos (AtributoNombre,AtributoAccion,ModuloId) values ('Pestaña: Datos del cliente','Click',6)	
+insert into PermisosModuloAtributos (AtributoNombre,AtributoAccion,ModuloId) values ('Pestaña: Estado de cuenta','Click',6)
+insert into PermisosModuloAtributos (AtributoNombre,AtributoAccion,ModuloId) values ('Pestaña: Pedidos en SIP','Click',6)
+insert into PermisosModuloAtributos (AtributoNombre,AtributoAccion,ModuloId) values ('Pestaña: Logotipos (Ver/Cargar)','Click',6)	
+insert into PermisosModuloAtributos (AtributoNombre,AtributoAccion,ModuloId) values ('Pestaña: Órden de trabajo en SIP','Click',6)

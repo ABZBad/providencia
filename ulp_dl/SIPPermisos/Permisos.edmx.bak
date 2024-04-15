@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SIPPermisosModelo.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="SIPPermisosModeloStoreContainer">
+          <EntitySet Name="PermisosGrupos" EntityType="SIPPermisosModelo.Store.PermisosGrupos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PermisosModuloAtributos" EntityType="SIPPermisosModelo.Store.PermisosModuloAtributos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PermisosModulos" EntityType="SIPPermisosModelo.Store.PermisosModulos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PermisosPerfiles" EntityType="SIPPermisosModelo.Store.PermisosPerfiles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PermisosPerfilModulos" EntityType="SIPPermisosModelo.Store.PermisosPerfilModulos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PermisosUsuarioEspeciales" EntityType="SIPPermisosModelo.Store.PermisosUsuarioEspeciales" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PermisosUsuarioPerfiles" EntityType="SIPPermisosModelo.Store.PermisosUsuarioPerfiles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PermisosUsuarios" EntityType="SIPPermisosModelo.Store.PermisosUsuarios" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vw_PermisosPorAtributo" EntityType="SIPPermisosModelo.Store.vw_PermisosPorAtributo" store:Type="Views" store:Schema="dbo" store:Name="vw_PermisosPorAtributo">
+            <DefiningQuery>SELECT 
+      [vw_PermisosPorAtributo].[Id] AS [Id], 
+      [vw_PermisosPorAtributo].[AtributoAccion] AS [AtributoAccion], 
+      [vw_PermisosPorAtributo].[ModuloId] AS [ModuloId]
+      FROM [dbo].[vw_PermisosPorAtributo] AS [vw_PermisosPorAtributo]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_GrupoModulo" Association="SIPPermisosModelo.Store.FK_GrupoModulo">
+            <End Role="PermisosGrupos" EntitySet="PermisosGrupos" />
+            <End Role="PermisosModulos" EntitySet="PermisosModulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ModuloAtributos" Association="SIPPermisosModelo.Store.FK_ModuloAtributos">
+            <End Role="PermisosModulos" EntitySet="PermisosModulos" />
+            <End Role="PermisosModuloAtributos" EntitySet="PermisosModuloAtributos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PerfilPerfilModulo" Association="SIPPermisosModelo.Store.FK_PerfilPerfilModulo">
+            <End Role="PermisosPerfiles" EntitySet="PermisosPerfiles" />
+            <End Role="PermisosPerfilModulos" EntitySet="PermisosPerfilModulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioEspeciales" Association="SIPPermisosModelo.Store.FK_UsuarioEspeciales">
+            <End Role="PermisosUsuarios" EntitySet="PermisosUsuarios" />
+            <End Role="PermisosUsuarioEspeciales" EntitySet="PermisosUsuarioEspeciales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_usuarioEspecialModulo" Association="SIPPermisosModelo.Store.FK_usuarioEspecialModulo">
+            <End Role="PermisosModulos" EntitySet="PermisosModulos" />
+            <End Role="PermisosUsuarioEspeciales" EntitySet="PermisosUsuarioEspeciales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_usuarioEspecialModuloAtributo" Association="SIPPermisosModelo.Store.FK_usuarioEspecialModuloAtributo">
+            <End Role="PermisosModuloAtributos" EntitySet="PermisosModuloAtributos" />
+            <End Role="PermisosUsuarioEspeciales" EntitySet="PermisosUsuarioEspeciales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioGrupos" Association="SIPPermisosModelo.Store.FK_UsuarioGrupos">
+            <End Role="PermisosUsuarios" EntitySet="PermisosUsuarios" />
+            <End Role="PermisosGrupos" EntitySet="PermisosGrupos" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="PermisosGrupos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GrupoNombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PermisosModuloAtributos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AtributoNombre" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="AtributoAccion" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="ModuloId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PermisosModulos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="MenuOrigen" Type="numeric" Nullable="false" />
+          <Property Name="OrdenMenu" Type="numeric" Nullable="false" />
+          <Property Name="PuedeEntrar" Type="bit" Nullable="false" />
+          <Property Name="PuedeInsertar" Type="bit" Nullable="false" />
+          <Property Name="PuedeModificar" Type="bit" Nullable="false" />
+          <Property Name="PuedeBorrar" Type="bit" Nullable="false" />
+          <Property Name="GrupoId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PermisosPerfiles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PerfilNombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PerfilDescripcion" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PermisosPerfilModulos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ModuloId" Type="int" Nullable="false" />
+          <Property Name="AtributoId" Type="int" Nullable="false" />
+          <Property Name="PerfilId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PermisosUsuarioEspeciales">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ModuloId" Type="int" Nullable="false" />
+          <Property Name="AtributoId" Type="int" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="Modulo_Id" Type="int" Nullable="false" />
+          <Property Name="ModuloAtributo_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PermisosUsuarioPerfiles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PerfilId" Type="int" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PermisosUsuarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UsuarioUsuario" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="UsuarioNombre" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="UsuarioContraseña" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="UsuarioCorreo" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="UsuarioStatus" Type="bit" Nullable="false" />
+          <Property Name="UsuarioFechaIngreso" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SIP.dbo.vw_PermisosPorAtributo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_PermisosPorAtributo">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="AtributoAccion" />
+            <PropertyRef Name="ModuloId" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="AtributoAccion" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="ModuloId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_GrupoModulo">
+          <End Role="PermisosGrupos" Type="SIPPermisosModelo.Store.PermisosGrupos" Multiplicity="1" />
+          <End Role="PermisosModulos" Type="SIPPermisosModelo.Store.PermisosModulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PermisosGrupos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermisosModulos">
+              <PropertyRef Name="GrupoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ModuloAtributos">
+          <End Role="PermisosModulos" Type="SIPPermisosModelo.Store.PermisosModulos" Multiplicity="1" />
+          <End Role="PermisosModuloAtributos" Type="SIPPermisosModelo.Store.PermisosModuloAtributos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PermisosModulos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermisosModuloAtributos">
+              <PropertyRef Name="ModuloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PerfilPerfilModulo">
+          <End Role="PermisosPerfiles" Type="SIPPermisosModelo.Store.PermisosPerfiles" Multiplicity="1" />
+          <End Role="PermisosPerfilModulos" Type="SIPPermisosModelo.Store.PermisosPerfilModulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PermisosPerfiles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermisosPerfilModulos">
+              <PropertyRef Name="PerfilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioEspeciales">
+          <End Role="PermisosUsuarios" Type="SIPPermisosModelo.Store.PermisosUsuarios" Multiplicity="1" />
+          <End Role="PermisosUsuarioEspeciales" Type="SIPPermisosModelo.Store.PermisosUsuarioEspeciales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PermisosUsuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermisosUsuarioEspeciales">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_usuarioEspecialModulo">
+          <End Role="PermisosModulos" Type="SIPPermisosModelo.Store.PermisosModulos" Multiplicity="1" />
+          <End Role="PermisosUsuarioEspeciales" Type="SIPPermisosModelo.Store.PermisosUsuarioEspeciales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PermisosModulos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermisosUsuarioEspeciales">
+              <PropertyRef Name="Modulo_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_usuarioEspecialModuloAtributo">
+          <End Role="PermisosModuloAtributos" Type="SIPPermisosModelo.Store.PermisosModuloAtributos" Multiplicity="1" />
+          <End Role="PermisosUsuarioEspeciales" Type="SIPPermisosModelo.Store.PermisosUsuarioEspeciales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PermisosModuloAtributos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermisosUsuarioEspeciales">
+              <PropertyRef Name="ModuloAtributo_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioGrupos">
+          <End Role="PermisosUsuarios" Type="SIPPermisosModelo.Store.PermisosUsuarios" Multiplicity="1" />
+          <End Role="PermisosGrupos" Type="SIPPermisosModelo.Store.PermisosGrupos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PermisosUsuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermisosGrupos">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SIPPermisosModelo" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SIPPermisosContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PermisosGrupos" EntityType="SIPPermisosModelo.PermisosGrupos" />
+          <EntitySet Name="PermisosModuloAtributos" EntityType="SIPPermisosModelo.PermisosModuloAtributos" />
+          <EntitySet Name="PermisosModulos" EntityType="SIPPermisosModelo.PermisosModulos" />
+          <EntitySet Name="PermisosPerfiles" EntityType="SIPPermisosModelo.PermisosPerfiles" />
+          <EntitySet Name="PermisosPerfilModulos" EntityType="SIPPermisosModelo.PermisosPerfilModulos" />
+          <EntitySet Name="PermisosUsuarioEspeciales" EntityType="SIPPermisosModelo.PermisosUsuarioEspeciales" />
+          <EntitySet Name="PermisosUsuarioPerfiles" EntityType="SIPPermisosModelo.PermisosUsuarioPerfiles" />
+          <EntitySet Name="PermisosUsuarios" EntityType="SIPPermisosModelo.PermisosUsuarios" />
+          <AssociationSet Name="FK_GrupoModulo" Association="SIPPermisosModelo.FK_GrupoModulo">
+            <End Role="PermisosGrupos" EntitySet="PermisosGrupos" />
+            <End Role="PermisosModulos" EntitySet="PermisosModulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioGrupos" Association="SIPPermisosModelo.FK_UsuarioGrupos">
+            <End Role="PermisosUsuarios" EntitySet="PermisosUsuarios" />
+            <End Role="PermisosGrupos" EntitySet="PermisosGrupos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ModuloAtributos" Association="SIPPermisosModelo.FK_ModuloAtributos">
+            <End Role="PermisosModulos" EntitySet="PermisosModulos" />
+            <End Role="PermisosModuloAtributos" EntitySet="PermisosModuloAtributos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_usuarioEspecialModuloAtributo" Association="SIPPermisosModelo.FK_usuarioEspecialModuloAtributo">
+            <End Role="PermisosModuloAtributos" EntitySet="PermisosModuloAtributos" />
+            <End Role="PermisosUsuarioEspeciales" EntitySet="PermisosUsuarioEspeciales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_usuarioEspecialModulo" Association="SIPPermisosModelo.FK_usuarioEspecialModulo">
+            <End Role="PermisosModulos" EntitySet="PermisosModulos" />
+            <End Role="PermisosUsuarioEspeciales" EntitySet="PermisosUsuarioEspeciales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PerfilPerfilModulo" Association="SIPPermisosModelo.FK_PerfilPerfilModulo">
+            <End Role="PermisosPerfiles" EntitySet="PermisosPerfiles" />
+            <End Role="PermisosPerfilModulos" EntitySet="PermisosPerfilModulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioEspeciales" Association="SIPPermisosModelo.FK_UsuarioEspeciales">
+            <End Role="PermisosUsuarios" EntitySet="PermisosUsuarios" />
+            <End Role="PermisosUsuarioEspeciales" EntitySet="PermisosUsuarioEspeciales" />
+          </AssociationSet>
+          <EntitySet Name="vw_PermisosPorAtributo" EntityType="SIPPermisosModelo.vw_PermisosPorAtributo" />
+        </EntityContainer>
+        <EntityType Name="PermisosGrupos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GrupoNombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PermisosModulos" Relationship="SIPPermisosModelo.FK_GrupoModulo" FromRole="PermisosGrupos" ToRole="PermisosModulos" />
+          <NavigationProperty Name="PermisosUsuarios" Relationship="SIPPermisosModelo.FK_UsuarioGrupos" FromRole="PermisosGrupos" ToRole="PermisosUsuarios" />
+        </EntityType>
+        <EntityType Name="PermisosModuloAtributos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AtributoNombre" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="AtributoAccion" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="ModuloId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PermisosModulos" Relationship="SIPPermisosModelo.FK_ModuloAtributos" FromRole="PermisosModuloAtributos" ToRole="PermisosModulos" />
+          <NavigationProperty Name="PermisosUsuarioEspeciales" Relationship="SIPPermisosModelo.FK_usuarioEspecialModuloAtributo" FromRole="PermisosModuloAtributos" ToRole="PermisosUsuarioEspeciales" />
+        </EntityType>
+        <EntityType Name="PermisosModulos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GrupoId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PermisosGrupos" Relationship="SIPPermisosModelo.FK_GrupoModulo" FromRole="PermisosModulos" ToRole="PermisosGrupos" />
+          <NavigationProperty Name="PermisosModuloAtributos" Relationship="SIPPermisosModelo.FK_ModuloAtributos" FromRole="PermisosModulos" ToRole="PermisosModuloAtributos" />
+          <NavigationProperty Name="PermisosUsuarioEspeciales" Relationship="SIPPermisosModelo.FK_usuarioEspecialModulo" FromRole="PermisosModulos" ToRole="PermisosUsuarioEspeciales" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="MenuOrigen" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="OrdenMenu" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Boolean" Name="PuedeEntrar" Nullable="false" />
+          <Property Type="Boolean" Name="PuedeInsertar" Nullable="false" />
+          <Property Type="Boolean" Name="PuedeModificar" Nullable="false" />
+          <Property Type="Boolean" Name="PuedeBorrar" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PermisosPerfiles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PerfilNombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PerfilDescripcion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="PermisosPerfilModulos" Relationship="SIPPermisosModelo.FK_PerfilPerfilModulo" FromRole="PermisosPerfiles" ToRole="PermisosPerfilModulos" />
+        </EntityType>
+        <EntityType Name="PermisosPerfilModulos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ModuloId" Type="Int32" Nullable="false" />
+          <Property Name="AtributoId" Type="Int32" Nullable="false" />
+          <Property Name="PerfilId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PermisosPerfiles" Relationship="SIPPermisosModelo.FK_PerfilPerfilModulo" FromRole="PermisosPerfilModulos" ToRole="PermisosPerfiles" />
+        </EntityType>
+        <EntityType Name="PermisosUsuarioEspeciales">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ModuloId" Type="Int32" Nullable="false" />
+          <Property Name="AtributoId" Type="Int32" Nullable="false" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+          <Property Name="Modulo_Id" Type="Int32" Nullable="false" />
+          <Property Name="ModuloAtributo_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PermisosModuloAtributos" Relationship="SIPPermisosModelo.FK_usuarioEspecialModuloAtributo" FromRole="PermisosUsuarioEspeciales" ToRole="PermisosModuloAtributos" />
+          <NavigationProperty Name="PermisosModulos" Relationship="SIPPermisosModelo.FK_usuarioEspecialModulo" FromRole="PermisosUsuarioEspeciales" ToRole="PermisosModulos" />
+          <NavigationProperty Name="PermisosUsuarios" Relationship="SIPPermisosModelo.FK_UsuarioEspeciales" FromRole="PermisosUsuarioEspeciales" ToRole="PermisosUsuarios" />
+        </EntityType>
+        <EntityType Name="PermisosUsuarioPerfiles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PerfilId" Type="Int32" Nullable="false" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PermisosUsuarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UsuarioUsuario" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="UsuarioNombre" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="UsuarioContraseña" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="UsuarioCorreo" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="UsuarioStatus" Type="Boolean" Nullable="false" />
+          <Property Name="UsuarioFechaIngreso" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="PermisosGrupos" Relationship="SIPPermisosModelo.FK_UsuarioGrupos" FromRole="PermisosUsuarios" ToRole="PermisosGrupos" />
+          <NavigationProperty Name="PermisosUsuarioEspeciales" Relationship="SIPPermisosModelo.FK_UsuarioEspeciales" FromRole="PermisosUsuarios" ToRole="PermisosUsuarioEspeciales" />
+          <Property Type="String" Name="UsuarioArea" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_GrupoModulo">
+          <End Role="PermisosGrupos" Type="SIPPermisosModelo.PermisosGrupos" Multiplicity="1" />
+          <End Role="PermisosModulos" Type="SIPPermisosModelo.PermisosModulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PermisosGrupos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermisosModulos">
+              <PropertyRef Name="GrupoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioGrupos">
+          <End Role="PermisosUsuarios" Type="SIPPermisosModelo.PermisosUsuarios" Multiplicity="1" />
+          <End Role="PermisosGrupos" Type="SIPPermisosModelo.PermisosGrupos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PermisosUsuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermisosGrupos">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ModuloAtributos">
+          <End Role="PermisosModulos" Type="SIPPermisosModelo.PermisosModulos" Multiplicity="1" />
+          <End Role="PermisosModuloAtributos" Type="SIPPermisosModelo.PermisosModuloAtributos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PermisosModulos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermisosModuloAtributos">
+              <PropertyRef Name="ModuloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_usuarioEspecialModuloAtributo">
+          <End Role="PermisosModuloAtributos" Type="SIPPermisosModelo.PermisosModuloAtributos" Multiplicity="1" />
+          <End Role="PermisosUsuarioEspeciales" Type="SIPPermisosModelo.PermisosUsuarioEspeciales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PermisosModuloAtributos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermisosUsuarioEspeciales">
+              <PropertyRef Name="ModuloAtributo_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_usuarioEspecialModulo">
+          <End Role="PermisosModulos" Type="SIPPermisosModelo.PermisosModulos" Multiplicity="1" />
+          <End Role="PermisosUsuarioEspeciales" Type="SIPPermisosModelo.PermisosUsuarioEspeciales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PermisosModulos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermisosUsuarioEspeciales">
+              <PropertyRef Name="Modulo_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PerfilPerfilModulo">
+          <End Role="PermisosPerfiles" Type="SIPPermisosModelo.PermisosPerfiles" Multiplicity="1" />
+          <End Role="PermisosPerfilModulos" Type="SIPPermisosModelo.PermisosPerfilModulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PermisosPerfiles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermisosPerfilModulos">
+              <PropertyRef Name="PerfilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioEspeciales">
+          <End Role="PermisosUsuarios" Type="SIPPermisosModelo.PermisosUsuarios" Multiplicity="1" />
+          <End Role="PermisosUsuarioEspeciales" Type="SIPPermisosModelo.PermisosUsuarioEspeciales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PermisosUsuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermisosUsuarioEspeciales">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="vw_PermisosPorAtributo">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="AtributoAccion" />
+            <PropertyRef Name="ModuloId" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="AtributoAccion" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ModuloId" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SIPPermisosModeloStoreContainer" CdmEntityContainer="SIPPermisosContext">
+          <EntitySetMapping Name="PermisosGrupos">
+            <EntityTypeMapping TypeName="SIPPermisosModelo.PermisosGrupos">
+              <MappingFragment StoreEntitySet="PermisosGrupos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GrupoNombre" ColumnName="GrupoNombre" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PermisosModuloAtributos">
+            <EntityTypeMapping TypeName="SIPPermisosModelo.PermisosModuloAtributos">
+              <MappingFragment StoreEntitySet="PermisosModuloAtributos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AtributoNombre" ColumnName="AtributoNombre" />
+                <ScalarProperty Name="AtributoAccion" ColumnName="AtributoAccion" />
+                <ScalarProperty Name="ModuloId" ColumnName="ModuloId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PermisosModulos">
+            <EntityTypeMapping TypeName="SIPPermisosModelo.PermisosModulos">
+              <MappingFragment StoreEntitySet="PermisosModulos">
+                <ScalarProperty Name="PuedeBorrar" ColumnName="PuedeBorrar" />
+                <ScalarProperty Name="PuedeModificar" ColumnName="PuedeModificar" />
+                <ScalarProperty Name="PuedeInsertar" ColumnName="PuedeInsertar" />
+                <ScalarProperty Name="PuedeEntrar" ColumnName="PuedeEntrar" />
+                <ScalarProperty Name="OrdenMenu" ColumnName="OrdenMenu" />
+                <ScalarProperty Name="MenuOrigen" ColumnName="MenuOrigen" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GrupoId" ColumnName="GrupoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PermisosPerfiles">
+            <EntityTypeMapping TypeName="SIPPermisosModelo.PermisosPerfiles">
+              <MappingFragment StoreEntitySet="PermisosPerfiles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PerfilNombre" ColumnName="PerfilNombre" />
+                <ScalarProperty Name="PerfilDescripcion" ColumnName="PerfilDescripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PermisosPerfilModulos">
+            <EntityTypeMapping TypeName="SIPPermisosModelo.PermisosPerfilModulos">
+              <MappingFragment StoreEntitySet="PermisosPerfilModulos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ModuloId" ColumnName="ModuloId" />
+                <ScalarProperty Name="AtributoId" ColumnName="AtributoId" />
+                <ScalarProperty Name="PerfilId" ColumnName="PerfilId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PermisosUsuarioEspeciales">
+            <EntityTypeMapping TypeName="SIPPermisosModelo.PermisosUsuarioEspeciales">
+              <MappingFragment StoreEntitySet="PermisosUsuarioEspeciales">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ModuloId" ColumnName="ModuloId" />
+                <ScalarProperty Name="AtributoId" ColumnName="AtributoId" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="Modulo_Id" ColumnName="Modulo_Id" />
+                <ScalarProperty Name="ModuloAtributo_Id" ColumnName="ModuloAtributo_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PermisosUsuarioPerfiles">
+            <EntityTypeMapping TypeName="SIPPermisosModelo.PermisosUsuarioPerfiles">
+              <MappingFragment StoreEntitySet="PermisosUsuarioPerfiles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PerfilId" ColumnName="PerfilId" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PermisosUsuarios">
+            <EntityTypeMapping TypeName="SIPPermisosModelo.PermisosUsuarios">
+              <MappingFragment StoreEntitySet="PermisosUsuarios">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UsuarioUsuario" ColumnName="UsuarioUsuario" />
+                <ScalarProperty Name="UsuarioNombre" ColumnName="UsuarioNombre" />
+                <ScalarProperty Name="UsuarioContraseña" ColumnName="UsuarioContraseña" />
+                <ScalarProperty Name="UsuarioCorreo" ColumnName="UsuarioCorreo" />
+                <ScalarProperty Name="UsuarioStatus" ColumnName="UsuarioStatus" />
+                <ScalarProperty Name="UsuarioFechaIngreso" ColumnName="UsuarioFechaIngreso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_PermisosPorAtributo">
+            <EntityTypeMapping TypeName="SIPPermisosModelo.vw_PermisosPorAtributo">
+              <MappingFragment StoreEntitySet="vw_PermisosPorAtributo">
+                <ScalarProperty Name="ModuloId" ColumnName="ModuloId" />
+                <ScalarProperty Name="AtributoAccion" ColumnName="AtributoAccion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

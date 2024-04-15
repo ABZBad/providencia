@@ -1,0 +1,1086 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{99ADF3A2-E11A-4C5A-8DB7-A2A6E869157D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ulp_dl</RootNamespace>
+    <AssemblyName>ulp_dl</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>SIP_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Linq.Dynamic">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.2\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="aspel_sae80\ACOMP01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\ACTCAM01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\ACTIVI01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\ACUMINVEALM5.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\AFACT01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\ALERTA01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\ALERTA_USUARIO01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\ALMACENES01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\APP_PROSPECT_AGENDA.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\APP_PROSPECT_DOCTOS.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\APP_PROSPECT_DOCTOS_DETALLE.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\APP_PROSPECT_DOCTOS_DETALLE_PROCESOS.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\APP_PROSPECT_DOCTOS_OBS.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\APP_PROSPECT_ENCUESTAS.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\APP_PROSPECT_ENCUESTAS_DETALLE.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\APP_PROSPECT_PROSPECTOS.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\APP_PROSPECT_PROSPECTOS_OBS.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\APP_PROSPECT_PROSPECTOS_ORI.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\APP_PROSPECT_USUARIOS.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\AspelSae80Context.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AspelSae80Context.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\AspelSae80Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\AspelSae80Context.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AspelSae80Context.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\AUTORIZAC01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\AUTORIZAP01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\BITA01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CAMP01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CAMPFIL01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CAPAS_X_MOV01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CARTAPORTE01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CARTERA.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CFDI01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CFDIC01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CFDI_REL01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CFDV22.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CFDV22TMP.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CFGLIN01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CITAS01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CLICAM01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CLIE01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CLIE_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CLIE_TIENDA01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CLIN01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CMT_DET.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CNSEST01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\COLOR01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\COMPC01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\COMPC_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\COMPD01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\COMPD_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\COMPO01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\COMPO_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\COMPQ01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\COMPQ_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\COMPR01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\COMPR_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CONC01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CONFIG_ENVIOS01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CONM01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CONP01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CONS_PER01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CONTAC01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CONTAP01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\COSTO_BORDADO.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CSTDPEDI.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CTAESQ01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CTRLBLOQUEO01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CTRL_ELIMINA01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CUEN_DET01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CUEN_M01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\CVES_ALTER01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\DESACT01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\DESEMBYAREA.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\DIASFESTIVOS.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\DOCTOSIGC01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\DOCTOSIGF01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\ENLACE_LTPD01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\ESTDPEDI.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FACTA01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FACTA_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FACTC01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FACTC_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FACTD01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FACTD_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FACTE01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FACTE_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FACTF01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FACTF_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FACTG01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FACTG_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FACTP01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FACTP_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FACTR01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FACTR_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FACTT01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FACTT_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FACTV01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FACTV_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FACT_GLOBAL01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FLET_ENLA.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FLET_MSTR.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FOLCXC01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FOLCXP01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FOLIOSC01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FOLIOSCXC01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FOLIOSCXP01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FOLIOSF01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FOTO_INVE01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\FUNCIONES_USUARIO.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\GUICAM01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\HNUMSER01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\IMAGENES.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\IMG_ARTICULO01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\IMPU01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\INFCLI01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\INFENVIO01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\INTCOI01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\INTERFAZ_PLUS_CTRL_ENLACE_COMPRAS.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\INVE01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\INVENTARIO.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\INVEN_CLARO01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\INVE_AMAZON01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\INVE_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\INVFIS01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\ISIP_BITACORA.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\ISIP_FACT_ANT_CTRL.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\ISIP_MONITOR_FACT_ANT.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\ISIP_NAMESPACES.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\ISIP_PERMISOS.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\ISIP_TRANSFERENCIAS_APARTADO.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\ISIP_TRANSFERENCIAS_VIRTUALES.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\KITS01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\LISTPRODSUST01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\LNKOLKC01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\LNKOLKP01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\LTPD01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\MINVE01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\MONED01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\MULT01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\NUMSER01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\OBS_DOCC01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\OBS_DOCF01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\OCLI01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\OCUEN01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\OINVE01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\OLTPD01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\OMINVE01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\OPAGA01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\OPERADOR01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\OPER_TERCEROS01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\OPER_X_TIPO_TERCERO01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\OPROV01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAGA_DET01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAGA_M01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAGOCODI01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAGOLINEA01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAGOS_PED_TIENDA01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAIS01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_APLICASOC01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_CAMPOSLIBRES01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_CLIENTES01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_CODI01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_COMPRAS01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_CTACONTABLE01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_DATOSBANCARIOS01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_DATOSBD01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_DATOSEMP01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_DATOSGRALES01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_DOMEXPED01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_DOMFISCAL01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_FACTURA01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_FACTURAELECTRONICA01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_FOLIOSC01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_FOLIOSF01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_GRAFICAS01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_INVENTARIO01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_PARTIDASCOMP01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_PARTIDASFACT01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_PROVEEDORES01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_TIENDAS01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_TIPODOCTOSC01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PARAM_TIPODOCTOSF01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_COMPC01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_COMPC_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_COMPD01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_COMPD_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_COMPO01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_COMPO_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_COMPQ01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_COMPQ_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_COMPR01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_COMPR_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_FACTA01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_FACTA_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_FACTC01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_FACTC_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_FACTD01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_FACTD_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_FACTE01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_FACTE_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_FACTF01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_FACTF_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_FACTG01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_FACTG_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_FACTP01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_FACTP_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_FACTR01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_FACTR_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_FACTT01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_FACTT_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_FACTV01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_FACTV_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_PED_AMAZON01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_PED_CLARO01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PAR_PED_TIEND01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PED_AMAZON01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PED_CLARO01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PED_DET.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PED_MSTR.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PED_TEMP.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PED_TIEND01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PERIODOS01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\POLI01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PRECIOS01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PRECIO_X_CONF01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PRECIO_X_PROD01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PRIORIDAD_MAQUILA.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PRODSUST01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROD_CIERREORDEN01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROD_CONFIGBD01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROD_ENTRADAFAB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROD_ENTREGAPARCIAL01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROD_ESQINDI01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROD_FABDIRECTA01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROD_INSUMOS01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROD_LOTESXCOMP01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROD_MULTIPLANTAS01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROD_OBSDETPT01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROD_OBSENTFAB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROD_OBSORD01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROD_OBSPT01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROD_ORDENES01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROD_PARAMSIS01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROD_PROCESOS01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROD_PRODTERM01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROD_PRODTERM_DET01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROD_REGISTROAUTOM01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROD_SERIESXCOMP01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROD_SUSTITUTOS01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROD_TBLCONTROL01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROD_TIPOINSUMO01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROV01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PROV_CLIB01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\PRVPROD01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\RESACT01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\RESULT01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\SOLICITUDES_ESPECIALES.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\TALLA01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\TBLCONTROL01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\TEMP1_.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\TIPO_TERCEROS01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\UPPEDIDOS.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\USUARIOS.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\U_DEPARTAMENTO.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\VEND01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="aspel_sae80\ZONA01.cs">
+      <DependentUpon>AspelSae80Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPNegocio\COST_ENLA.cs">
+      <DependentUpon>Negocio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPNegocio\COST_MSTR.cs">
+      <DependentUpon>Negocio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPNegocio\LogUPPedidos.cs">
+      <DependentUpon>Negocio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPNegocio\VersionesDetalle.cs">
+      <DependentUpon>Negocio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPNegocio\VersionesPrincipal.cs">
+      <DependentUpon>Negocio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPNegocio\vw_Inventario.cs">
+      <DependentUpon>Negocio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPReportes\vw_ExistenciasBase.cs">
+      <DependentUpon>Reportes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPReportes\vw_FactNVFoliosAntPrendas.cs">
+      <DependentUpon>Reportes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPReportes\vw_Pedido.cs">
+      <DependentUpon>Reportes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Utilerias2.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SIPNegocio\Negocio.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Negocio.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPNegocio\Negocio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Negocio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPNegocio\Negocio.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Negocio.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SIPNegocio\vw_Clientes.cs">
+      <DependentUpon>Negocio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPNegocio\vw_EstadoCuenta.cs">
+      <DependentUpon>Negocio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPPermisos\Permisos.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Permisos.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPPermisos\Permisos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Permisos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPPermisos\Permisos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Permisos.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SIPPermisos\PermisosGrupos.cs">
+      <DependentUpon>Permisos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPPermisos\PermisosModuloAtributos.cs">
+      <DependentUpon>Permisos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPPermisos\PermisosModulos.cs">
+      <DependentUpon>Permisos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPPermisos\PermisosPerfiles.cs">
+      <DependentUpon>Permisos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPPermisos\PermisosPerfilModulos.cs">
+      <DependentUpon>Permisos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPPermisos\PermisosUsuarioEspeciales.cs">
+      <DependentUpon>Permisos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPPermisos\PermisosUsuarioPerfiles.cs">
+      <DependentUpon>Permisos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPPermisos\PermisosUsuarios.cs">
+      <DependentUpon>Permisos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPPermisos\vw_PermisosPorAtributo.cs">
+      <DependentUpon>Permisos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPReportes\Reportes.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reportes.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPReportes\Reportes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reportes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPReportes\Reportes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reportes.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SIPReportes\vw_FactDFoliosAntPrendas.cs">
+      <DependentUpon>Reportes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPReportes\vw_FactFFoliosAntPrendas.cs">
+      <DependentUpon>Reportes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SIPReportes\vw_UpPedidos.cs">
+      <DependentUpon>Reportes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Utilerias.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="aspel_sae80\AspelSae80Context.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AspelSae80Context.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="aspel_sae80\AspelSae80Context.edmx.diagram">
+      <DependentUpon>AspelSae80Context.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\ulp_dl.Aspel_Prod30.aspel_prod30ConnectionString.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="SIPPermisos\Permisos.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Permisos.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="SIPNegocio\Negocio.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Negocio.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SIPNegocio\Negocio.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Negocio.edmx</DependentUpon>
+      <LastGenOutput>Negocio.Context.cs</LastGenOutput>
+    </None>
+    <None Include="SIPNegocio\Negocio.edmx.diagram">
+      <DependentUpon>Negocio.edmx</DependentUpon>
+    </None>
+    <DesignDataWithDesignTimeCreatableTypes Include="SIPNegocio\Negocio.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Negocio.edmx</DependentUpon>
+      <LastGenOutput>Negocio.cs</LastGenOutput>
+    </DesignDataWithDesignTimeCreatableTypes>
+    <None Include="SIPPermisos\Permisos.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Permisos.edmx</DependentUpon>
+      <LastGenOutput>Permisos.Context.cs</LastGenOutput>
+    </None>
+    <None Include="SIPPermisos\Permisos.edmx.diagram">
+      <DependentUpon>Permisos.edmx</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SIPPermisos\Permisos.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Permisos.edmx</DependentUpon>
+      <LastGenOutput>Permisos.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="SIPReportes\Reportes.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Reportes.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SIPReportes\Reportes.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Reportes.edmx</DependentUpon>
+      <LastGenOutput>Reportes.Context.cs</LastGenOutput>
+    </None>
+    <None Include="SIPReportes\Reportes.edmx.diagram">
+      <DependentUpon>Reportes.edmx</DependentUpon>
+    </None>
+    <None Include="SIPReportes\Reportes.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Reportes.edmx</DependentUpon>
+      <LastGenOutput>Reportes.cs</LastGenOutput>
+    </None>
+    <None Include="SIP_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="aspel_sae80\AspelSae80Context.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AspelSae80Context.edmx</DependentUpon>
+      <LastGenOutput>AspelSae80Context.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="aspel_sae80\AspelSae80Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AspelSae80Context.edmx</DependentUpon>
+      <LastGenOutput>AspelSae80Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SIPNegocio\Negocio.edmx.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

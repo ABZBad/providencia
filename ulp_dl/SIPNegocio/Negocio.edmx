@@ -1,0 +1,622 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SIPNegocioModelo.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="SIPNegocioModeloStoreContainer">
+          <EntitySet Name="COST_ENLA" EntityType="SIPNegocioModelo.Store.COST_ENLA" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="COST_MSTR" EntityType="SIPNegocioModelo.Store.COST_MSTR" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="LogUPPedidos" EntityType="SIPNegocioModelo.Store.LogUPPedidos" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="VersionesDetalle" EntityType="SIPNegocioModelo.Store.VersionesDetalle" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="VersionesPrincipal" EntityType="SIPNegocioModelo.Store.VersionesPrincipal" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="vw_Clientes" EntityType="SIPNegocioModelo.Store.vw_Clientes" store:Type="Views" store:Schema="dbo" store:Name="vw_Clientes" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+            <DefiningQuery>SELECT 
+      [vw_Clientes].[CLAVE] AS [CLAVE], 
+      [vw_Clientes].[RFC] AS [RFC], 
+      [vw_Clientes].[NOMBRE_CLIENTE] AS [NOMBRE_CLIENTE], 
+      [vw_Clientes].[DIRECCION] AS [DIRECCION], 
+      [vw_Clientes].[TELEFONO] AS [TELEFONO], 
+      [vw_Clientes].[CODIGO] AS [CODIGO], 
+      [vw_Clientes].[ATENCION] AS [ATENCION], 
+      [vw_Clientes].[NOMBRE_VENDEDOR] AS [NOMBRE_VENDEDOR], 
+      [vw_Clientes].[DESCUENTO] AS [DESCUENTO], 
+      [vw_Clientes].[DIAS_CRE] AS [DIAS_CRE], 
+      [vw_Clientes].[LIM_CRED] AS [LIM_CRED], 
+      [vw_Clientes].[CRED_DISPO] AS [CRED_DISPO], 
+      [vw_Clientes].[SALDO] AS [SALDO], 
+      [vw_Clientes].[TEXTO] AS [TEXTO], 
+      [vw_Clientes].[FCH_ULTCOM] AS [FCH_ULTCOM], 
+      [vw_Clientes].[PZAULTANIO] AS [PZAULTANIO], 
+      [vw_Clientes].[CL8] AS [CL8], 
+      [vw_Clientes].[CVE_VEND] AS [CVE_VEND], 
+      [vw_Clientes].[STATUS] AS [STATUS]
+      FROM [dbo].[vw_Clientes] AS [vw_Clientes]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_EstadoCuenta" EntityType="SIPNegocioModelo.Store.vw_EstadoCuenta" store:Type="Views" store:Schema="dbo" store:Name="vw_EstadoCuenta" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+            <DefiningQuery>SELECT 
+      [vw_EstadoCuenta].[CVE_CLIE] AS [CVE_CLIE], 
+      [vw_EstadoCuenta].[Concepto] AS [Concepto], 
+      [vw_EstadoCuenta].[Documento] AS [Documento], 
+      [vw_EstadoCuenta].[Referencia] AS [Referencia], 
+      [vw_EstadoCuenta].[Aplicado] AS [Aplicado], 
+      [vw_EstadoCuenta].[Vencido] AS [Vencido], 
+      [vw_EstadoCuenta].[Elaborado] AS [Elaborado], 
+      [vw_EstadoCuenta].[Cargo] AS [Cargo], 
+      [vw_EstadoCuenta].[Abono] AS [Abono], 
+      [vw_EstadoCuenta].[Dias] AS [Dias]
+      FROM [dbo].[vw_EstadoCuenta] AS [vw_EstadoCuenta]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_Inventario" EntityType="SIPNegocioModelo.Store.vw_Inventario" store:Type="Views" store:Schema="dbo" store:Name="vw_Inventario" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+            <DefiningQuery>SELECT 
+      [vw_Inventario].[CLV_ART] AS [CLV_ART], 
+      [vw_Inventario].[DESCR] AS [DESCR], 
+      [vw_Inventario].[PRECIO1] AS [PRECIO1], 
+      [vw_Inventario].[TIPO_ELE] AS [TIPO_ELE]
+      FROM [dbo].[vw_Inventario] AS [vw_Inventario]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_VersionesPrincipalVersionesDetalle" Association="SIPNegocioModelo.Store.FK_VersionesPrincipalVersionesDetalle">
+            <End Role="VersionesPrincipal" EntitySet="VersionesPrincipal" />
+            <End Role="VersionesDetalle" EntitySet="VersionesDetalle" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="COST_ENLA">
+          <Key>
+            <PropertyRef Name="CVE_CLPV" />
+            <PropertyRef Name="CVE_DOC" />
+            <PropertyRef Name="PEDIDO" />
+          </Key>
+          <Property Name="NUM_REG" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CVE_CLPV" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="CVE_DOC" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="PEDIDO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="COST_MSTR">
+          <Key>
+            <PropertyRef Name="CVE_CLPV" />
+            <PropertyRef Name="CVE_DOC" />
+          </Key>
+          <Property Name="NUM_REG" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CVE_CLPV" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="CVE_DOC" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="CAN_TOT" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LogUPPedidos">
+          <Key>
+            <PropertyRef Name="UID" />
+          </Key>
+          <Property Name="UID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TRAN_ID" Type="int" Nullable="false" />
+          <Property Name="WIN_USER" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="SIP80_USER" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="PC" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="DATE" Type="datetime" Nullable="false" />
+          <Property Name="ACCION" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="PANTALLA" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="ID" Type="int" />
+          <Property Name="PEDIDO" Type="float" />
+          <Property Name="COD_CLIENTE" Type="varchar" MaxLength="50" />
+          <Property Name="F_VENCIMIENTO" Type="smalldatetime" />
+          <Property Name="F_VENCIMIENTO2" Type="smalldatetime" />
+          <Property Name="F_ESTANDAR" Type="smalldatetime" />
+          <Property Name="PROCESOS" Type="varchar" MaxLength="50" />
+          <Property Name="COMENTARIOS" Type="varchar" MaxLength="255" />
+          <Property Name="F_CAPT" Type="smalldatetime" />
+          <Property Name="F_IMPRESION" Type="smalldatetime" />
+          <Property Name="F_GESTION" Type="smalldatetime" />
+          <Property Name="F_CAPT_ASPEL" Type="smalldatetime" />
+          <Property Name="F_CREDITO" Type="smalldatetime" />
+          <Property Name="F_ASIG_RUTA" Type="smalldatetime" />
+          <Property Name="F_LIBERADO" Type="smalldatetime" />
+          <Property Name="F_SURTIDO" Type="smalldatetime" />
+          <Property Name="F_BORDADO" Type="smalldatetime" />
+          <Property Name="F_COSTURA" Type="smalldatetime" />
+          <Property Name="F_CORTE" Type="smalldatetime" />
+          <Property Name="F_ESTAMPADO" Type="smalldatetime" />
+          <Property Name="F_INICIALES" Type="smalldatetime" />
+          <Property Name="F_EMPAQUE" Type="smalldatetime" />
+          <Property Name="F_EMBARQUE" Type="smalldatetime" />
+          <Property Name="FECHAPEDIDO" Type="smalldatetime" />
+          <Property Name="FECHARUTA" Type="smalldatetime" />
+          <Property Name="GUIA" Type="varchar" MaxLength="50" />
+          <Property Name="CAJAS" Type="int" />
+          <Property Name="CHOFER" Type="varchar" MaxLength="20" />
+          <Property Name="DEPARTAMENTO" Type="varchar" MaxLength="50" />
+          <Property Name="DESTINO" Type="varchar" MaxLength="30" />
+          <Property Name="OBSERVACIONES" Type="varchar(max)" />
+          <Property Name="ESTATUS" Type="varchar" MaxLength="10" />
+          <Property Name="TRANSPORTE" Type="varchar" MaxLength="20" />
+          <Property Name="COM_SURTIDO" Type="varchar" MaxLength="255" />
+          <Property Name="COM_BORDADO" Type="varchar" MaxLength="255" />
+          <Property Name="COM_COSTURA" Type="varchar" MaxLength="255" />
+          <Property Name="COM_CORTE" Type="varchar" MaxLength="255" />
+          <Property Name="COM_ESTAMPADO" Type="varchar" MaxLength="255" />
+          <Property Name="COM_INICIALES" Type="varchar" MaxLength="255" />
+          <Property Name="COM_EMPAQUE" Type="varchar" MaxLength="255" />
+          <Property Name="COM_CREDITO" Type="varchar" MaxLength="255" />
+          <Property Name="ESTATUS_UPPEDIDOS" Type="varchar" MaxLength="1" />
+          <Property Name="F_ENTREGADO" Type="smalldatetime" />
+          <Property Name="COM_ENTREGA" Type="varchar" MaxLength="255" />
+		  <Property Name="F_COORDINADOR" Type="smalldatetime" />
+		  <Property Name="F_GV" Type="smalldatetime" />
+		  <Property Name="F_DIRECCION" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="VersionesDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="VersionesDescripcion" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="VersionesPrincipalId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VersionesPrincipal">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="VersionesVersion" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="VersionFecha" Type="datetime" Nullable="false" />
+          <Property Name="VersionUsuario" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SIP.dbo.vw_Clientes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_Clientes">
+          <Key>
+            <PropertyRef Name="RFC" />
+            <PropertyRef Name="NOMBRE_CLIENTE" />
+            <PropertyRef Name="TELEFONO" />
+            <PropertyRef Name="CODIGO" />
+            <PropertyRef Name="ATENCION" />
+            <PropertyRef Name="NOMBRE_VENDEDOR" />
+            <PropertyRef Name="DESCUENTO" />
+            <PropertyRef Name="DIAS_CRE" />
+            <PropertyRef Name="LIM_CRED" />
+            <PropertyRef Name="CRED_DISPO" />
+            <PropertyRef Name="SALDO" />
+            <PropertyRef Name="TEXTO" />
+            <PropertyRef Name="FCH_ULTCOM" />
+            <PropertyRef Name="CL8" />
+            <PropertyRef Name="STATUS" />
+          </Key>
+          <Property Name="CLAVE" Type="varchar" MaxLength="10" />
+          <Property Name="RFC" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="NOMBRE_CLIENTE" Type="varchar" Nullable="false" MaxLength="120" />
+          <Property Name="DIRECCION" Type="varchar" MaxLength="214" />
+          <Property Name="TELEFONO" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="CODIGO" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="ATENCION" Type="varchar" Nullable="false" MaxLength="60" />
+          <Property Name="NOMBRE_VENDEDOR" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="DESCUENTO" Type="float" Nullable="false" />
+          <Property Name="DIAS_CRE" Type="int" Nullable="false" />
+          <Property Name="LIM_CRED" Type="float" Nullable="false" />
+          <Property Name="CRED_DISPO" Type="float" Nullable="false" />
+          <Property Name="SALDO" Type="float" Nullable="false" />
+          <Property Name="TEXTO" Type="varchar" Nullable="false" MaxLength="60" />
+          <Property Name="FCH_ULTCOM" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="PZAULTANIO" Type="float" />
+          <Property Name="CL8" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="CVE_VEND" Type="varchar" MaxLength="5" />
+          <Property Name="STATUS" Type="varchar" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SIP.dbo.vw_EstadoCuenta' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_EstadoCuenta">
+          <Key>
+            
+            
+            
+            
+            
+            
+            <PropertyRef Name="CVE_CLIE" />
+          </Key>
+          <Property Name="CVE_CLIE" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Concepto" Type="varchar" MaxLength="52" />
+          <Property Name="Documento" Type="varchar" MaxLength="20" />
+          <Property Name="Referencia" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Aplicado" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="Vencido" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="Elaborado" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="Cargo" Type="float" Nullable="false" />
+          <Property Name="Abono" Type="float" Nullable="false" />
+          <Property Name="Dias" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'SIP.dbo.vw_Inventario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vw_Inventario">
+          <Key>
+            <PropertyRef Name="CLV_ART" />
+          </Key>
+          <Property Name="CLV_ART" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="DESCR" Type="varchar" MaxLength="40" />
+          <Property Name="PRECIO1" Type="float" />
+          <Property Name="TIPO_ELE" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <Association Name="FK_VersionesPrincipalVersionesDetalle">
+          <End Role="VersionesPrincipal" Type="SIPNegocioModelo.Store.VersionesPrincipal" Multiplicity="1" />
+          <End Role="VersionesDetalle" Type="SIPNegocioModelo.Store.VersionesDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VersionesPrincipal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VersionesDetalle">
+              <PropertyRef Name="VersionesPrincipalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SIPNegocioModelo" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SIPNegocioContext" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="vw_EstadoCuenta" EntityType="SIPNegocioModelo.vw_EstadoCuenta" />
+          <EntitySet Name="VersionesDetalles" EntityType="SIPNegocioModelo.VersionesDetalle" />
+          <EntitySet Name="VersionesPrincipals" EntityType="SIPNegocioModelo.VersionesPrincipal" />
+          <AssociationSet Name="FK_VersionesPrincipalVersionesDetalle" Association="SIPNegocioModelo.FK_VersionesPrincipalVersionesDetalle">
+            <End Role="VersionesPrincipal" EntitySet="VersionesPrincipals" />
+            <End Role="VersionesDetalle" EntitySet="VersionesDetalles" />
+          </AssociationSet>
+          <EntitySet Name="vw_Inventario" EntityType="SIPNegocioModelo.vw_Inventario" />
+          <EntitySet Name="LogUPPedidos" EntityType="SIPNegocioModelo.LogUPPedidos" />
+          <EntitySet Name="COST_ENLA" EntityType="SIPNegocioModelo.COST_ENLA" />
+          <EntitySet Name="COST_MSTR" EntityType="SIPNegocioModelo.COST_MSTR" />
+          <EntitySet Name="vw_Clientes" EntityType="SIPNegocioModelo.vw_Clientes" />
+        </EntityContainer>
+        <EntityType Name="vw_EstadoCuenta">
+          <Key>
+            <PropertyRef Name="CVE_CLIE" />
+          </Key>
+          <Property Type="String" Name="CVE_CLIE" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Concepto" MaxLength="52" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Documento" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Referencia" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Type="String" Name="Aplicado" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Vencido" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Elaborado" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="Cargo" Nullable="false" />
+          <Property Type="Double" Name="Abono" Nullable="false" />
+          <Property Type="Int32" Name="Dias" />
+        </EntityType>
+        <EntityType Name="VersionesDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="VersionesDescripcion" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="VersionesPrincipalId" Nullable="false" />
+          <NavigationProperty Name="VersionesPrincipal" Relationship="SIPNegocioModelo.FK_VersionesPrincipalVersionesDetalle" FromRole="VersionesDetalle" ToRole="VersionesPrincipal" />
+        </EntityType>
+        <EntityType Name="VersionesPrincipal">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="VersionesVersion" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="VersionFecha" Nullable="false" Precision="3" />
+          <Property Type="String" Name="VersionUsuario" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="VersionesDetalles" Relationship="SIPNegocioModelo.FK_VersionesPrincipalVersionesDetalle" FromRole="VersionesPrincipal" ToRole="VersionesDetalle" />
+        </EntityType>
+        <Association Name="FK_VersionesPrincipalVersionesDetalle">
+          <End Type="SIPNegocioModelo.VersionesPrincipal" Role="VersionesPrincipal" Multiplicity="1" />
+          <End Type="SIPNegocioModelo.VersionesDetalle" Role="VersionesDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VersionesPrincipal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VersionesDetalle">
+              <PropertyRef Name="VersionesPrincipalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="vw_Inventario">
+          <Key>
+            <PropertyRef Name="CLV_ART" />
+          </Key>
+          <Property Type="String" Name="CLV_ART" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DESCR" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="PRECIO1" />
+          <Property Type="String" Name="TIPO_ELE" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LogUPPedidos">
+          <Key>
+            <PropertyRef Name="UID" />
+          </Key>
+          <Property Type="Int32" Name="UID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="TRAN_ID" Nullable="false" />
+          <Property Type="String" Name="WIN_USER" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SIP80_USER" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PC" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DATE" Nullable="false" Precision="3" />
+          <Property Type="String" Name="ACCION" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PANTALLA" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ID" />
+          <Property Type="Double" Name="PEDIDO" />
+          <Property Type="String" Name="COD_CLIENTE" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="F_VENCIMIENTO" Precision="0" />
+          <Property Type="DateTime" Name="F_VENCIMIENTO2" Precision="0" />
+          <Property Type="DateTime" Name="F_ESTANDAR" Precision="0" />
+          <Property Type="String" Name="PROCESOS" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COMENTARIOS" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="F_CAPT" Precision="0" />
+          <Property Type="DateTime" Name="F_IMPRESION" Precision="0" />
+          <Property Type="DateTime" Name="F_GESTION" Precision="0" />
+          <Property Type="DateTime" Name="F_CAPT_ASPEL" Precision="0" />
+          <Property Type="DateTime" Name="F_CREDITO" Precision="0" />
+          <Property Type="DateTime" Name="F_ASIG_RUTA" Precision="0" />
+          <Property Type="DateTime" Name="F_LIBERADO" Precision="0" />
+          <Property Type="DateTime" Name="F_SURTIDO" Precision="0" />
+          <Property Type="DateTime" Name="F_BORDADO" Precision="0" />
+          <Property Type="DateTime" Name="F_COSTURA" Precision="0" />
+          <Property Type="DateTime" Name="F_CORTE" Precision="0" />
+          <Property Type="DateTime" Name="F_ESTAMPADO" Precision="0" />
+          <Property Type="DateTime" Name="F_INICIALES" Precision="0" />
+          <Property Type="DateTime" Name="F_EMPAQUE" Precision="0" />
+          <Property Type="DateTime" Name="F_EMBARQUE" Precision="0" />
+          <Property Type="DateTime" Name="FECHAPEDIDO" Precision="0" />
+          <Property Type="DateTime" Name="FECHARUTA" Precision="0" />
+          <Property Type="String" Name="GUIA" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CAJAS" />
+          <Property Type="String" Name="CHOFER" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DEPARTAMENTO" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DESTINO" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="OBSERVACIONES" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ESTATUS" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TRANSPORTE" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COM_SURTIDO" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COM_BORDADO" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COM_COSTURA" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COM_CORTE" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COM_ESTAMPADO" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COM_INICIALES" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COM_EMPAQUE" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COM_CREDITO" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ESTATUS_UPPEDIDOS" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="F_ENTREGADO" Precision="0" />
+          <Property Type="String" Name="COM_ENTREGA" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="F_COORDINADOR" />
+		  <Property Type="DateTime" Name="F_GV" />
+		  <Property Type="DateTime" Name="F_DIRECCION" />
+        </EntityType>
+        <EntityType Name="COST_ENLA">
+          <Key>
+            <PropertyRef Name="CVE_CLPV" />
+            <PropertyRef Name="CVE_DOC" />
+            <PropertyRef Name="PEDIDO" />
+          </Key>
+          <Property Type="Int32" Name="NUM_REG" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="CVE_CLPV" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CVE_DOC" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="PEDIDO" Nullable="false" />
+        </EntityType>
+        <EntityType Name="COST_MSTR">
+          <Key>
+            <PropertyRef Name="CVE_CLPV" />
+            <PropertyRef Name="CVE_DOC" />
+          </Key>
+          <Property Type="Int32" Name="NUM_REG" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="CVE_CLPV" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CVE_DOC" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="CAN_TOT" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vw_Clientes">
+          <Key>
+            <PropertyRef Name="RFC" />
+            <PropertyRef Name="NOMBRE_CLIENTE" />
+            <PropertyRef Name="TELEFONO" />
+            <PropertyRef Name="CODIGO" />
+            <PropertyRef Name="ATENCION" />
+            <PropertyRef Name="NOMBRE_VENDEDOR" />
+            <PropertyRef Name="DESCUENTO" />
+            <PropertyRef Name="DIAS_CRE" />
+            <PropertyRef Name="LIM_CRED" />
+            <PropertyRef Name="CRED_DISPO" />
+            <PropertyRef Name="SALDO" />
+            <PropertyRef Name="TEXTO" />
+            <PropertyRef Name="FCH_ULTCOM" />
+            <PropertyRef Name="CL8" />
+            <PropertyRef Name="STATUS" />
+          </Key>
+          <Property Type="String" Name="CLAVE" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RFC" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOMBRE_CLIENTE" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DIRECCION" MaxLength="214" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TELEFONO" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CODIGO" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ATENCION" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NOMBRE_VENDEDOR" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="DESCUENTO" Nullable="false" />
+          <Property Type="Int32" Name="DIAS_CRE" Nullable="false" />
+          <Property Type="Double" Name="LIM_CRED" Nullable="false" />
+          <Property Type="Double" Name="CRED_DISPO" Nullable="false" />
+          <Property Type="Double" Name="SALDO" Nullable="false" />
+          <Property Type="String" Name="TEXTO" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FCH_ULTCOM" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="PZAULTANIO" />
+          <Property Type="String" Name="CL8" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CVE_VEND" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="STATUS" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SIPNegocioModeloStoreContainer" CdmEntityContainer="SIPNegocioContext">
+          <EntitySetMapping Name="vw_EstadoCuenta">
+            <EntityTypeMapping TypeName="SIPNegocioModelo.vw_EstadoCuenta">
+              <MappingFragment StoreEntitySet="vw_EstadoCuenta">
+                <ScalarProperty Name="Dias" ColumnName="Dias" />
+                <ScalarProperty Name="Abono" ColumnName="Abono" />
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+                <ScalarProperty Name="Elaborado" ColumnName="Elaborado" />
+                <ScalarProperty Name="Vencido" ColumnName="Vencido" />
+                <ScalarProperty Name="Aplicado" ColumnName="Aplicado" />
+                <ScalarProperty Name="Referencia" ColumnName="Referencia" />
+                <ScalarProperty Name="Documento" ColumnName="Documento" />
+                <ScalarProperty Name="Concepto" ColumnName="Concepto" />
+                <ScalarProperty Name="CVE_CLIE" ColumnName="CVE_CLIE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VersionesDetalles">
+            <EntityTypeMapping TypeName="SIPNegocioModelo.VersionesDetalle">
+              <MappingFragment StoreEntitySet="VersionesDetalle">
+                <ScalarProperty Name="VersionesPrincipalId" ColumnName="VersionesPrincipalId" />
+                <ScalarProperty Name="VersionesDescripcion" ColumnName="VersionesDescripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VersionesPrincipals">
+            <EntityTypeMapping TypeName="SIPNegocioModelo.VersionesPrincipal">
+              <MappingFragment StoreEntitySet="VersionesPrincipal">
+                <ScalarProperty Name="VersionUsuario" ColumnName="VersionUsuario" />
+                <ScalarProperty Name="VersionFecha" ColumnName="VersionFecha" />
+                <ScalarProperty Name="VersionesVersion" ColumnName="VersionesVersion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_Inventario">
+            <EntityTypeMapping TypeName="SIPNegocioModelo.vw_Inventario">
+              <MappingFragment StoreEntitySet="vw_Inventario">
+                <ScalarProperty Name="TIPO_ELE" ColumnName="TIPO_ELE" />
+                <ScalarProperty Name="PRECIO1" ColumnName="PRECIO1" />
+                <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+                <ScalarProperty Name="CLV_ART" ColumnName="CLV_ART" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogUPPedidos">
+            <EntityTypeMapping TypeName="SIPNegocioModelo.LogUPPedidos">
+              <MappingFragment StoreEntitySet="LogUPPedidos">
+                <ScalarProperty Name="COM_ENTREGA" ColumnName="COM_ENTREGA" />
+                <ScalarProperty Name="F_ENTREGADO" ColumnName="F_ENTREGADO" />
+                <ScalarProperty Name="ESTATUS_UPPEDIDOS" ColumnName="ESTATUS_UPPEDIDOS" />
+                <ScalarProperty Name="COM_CREDITO" ColumnName="COM_CREDITO" />
+                <ScalarProperty Name="COM_EMPAQUE" ColumnName="COM_EMPAQUE" />
+                <ScalarProperty Name="COM_INICIALES" ColumnName="COM_INICIALES" />
+                <ScalarProperty Name="COM_ESTAMPADO" ColumnName="COM_ESTAMPADO" />
+                <ScalarProperty Name="COM_CORTE" ColumnName="COM_CORTE" />
+                <ScalarProperty Name="COM_COSTURA" ColumnName="COM_COSTURA" />
+                <ScalarProperty Name="COM_BORDADO" ColumnName="COM_BORDADO" />
+                <ScalarProperty Name="COM_SURTIDO" ColumnName="COM_SURTIDO" />
+                <ScalarProperty Name="TRANSPORTE" ColumnName="TRANSPORTE" />
+                <ScalarProperty Name="ESTATUS" ColumnName="ESTATUS" />
+                <ScalarProperty Name="OBSERVACIONES" ColumnName="OBSERVACIONES" />
+                <ScalarProperty Name="DESTINO" ColumnName="DESTINO" />
+                <ScalarProperty Name="DEPARTAMENTO" ColumnName="DEPARTAMENTO" />
+                <ScalarProperty Name="CHOFER" ColumnName="CHOFER" />
+                <ScalarProperty Name="CAJAS" ColumnName="CAJAS" />
+                <ScalarProperty Name="GUIA" ColumnName="GUIA" />
+                <ScalarProperty Name="FECHARUTA" ColumnName="FECHARUTA" />
+                <ScalarProperty Name="FECHAPEDIDO" ColumnName="FECHAPEDIDO" />
+                <ScalarProperty Name="F_EMBARQUE" ColumnName="F_EMBARQUE" />
+                <ScalarProperty Name="F_EMPAQUE" ColumnName="F_EMPAQUE" />
+                <ScalarProperty Name="F_INICIALES" ColumnName="F_INICIALES" />
+                <ScalarProperty Name="F_ESTAMPADO" ColumnName="F_ESTAMPADO" />
+                <ScalarProperty Name="F_CORTE" ColumnName="F_CORTE" />
+                <ScalarProperty Name="F_COSTURA" ColumnName="F_COSTURA" />
+                <ScalarProperty Name="F_BORDADO" ColumnName="F_BORDADO" />
+                <ScalarProperty Name="F_SURTIDO" ColumnName="F_SURTIDO" />
+                <ScalarProperty Name="F_LIBERADO" ColumnName="F_LIBERADO" />
+                <ScalarProperty Name="F_ASIG_RUTA" ColumnName="F_ASIG_RUTA" />
+                <ScalarProperty Name="F_CREDITO" ColumnName="F_CREDITO" />
+                <ScalarProperty Name="F_CAPT_ASPEL" ColumnName="F_CAPT_ASPEL" />
+                <ScalarProperty Name="F_GESTION" ColumnName="F_GESTION" />
+                <ScalarProperty Name="F_IMPRESION" ColumnName="F_IMPRESION" />
+                <ScalarProperty Name="F_CAPT" ColumnName="F_CAPT" />
+                <ScalarProperty Name="COMENTARIOS" ColumnName="COMENTARIOS" />
+                <ScalarProperty Name="PROCESOS" ColumnName="PROCESOS" />
+                <ScalarProperty Name="F_ESTANDAR" ColumnName="F_ESTANDAR" />
+                <ScalarProperty Name="F_VENCIMIENTO2" ColumnName="F_VENCIMIENTO2" />
+                <ScalarProperty Name="F_VENCIMIENTO" ColumnName="F_VENCIMIENTO" />
+                <ScalarProperty Name="COD_CLIENTE" ColumnName="COD_CLIENTE" />
+                <ScalarProperty Name="PEDIDO" ColumnName="PEDIDO" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PANTALLA" ColumnName="PANTALLA" />
+                <ScalarProperty Name="ACCION" ColumnName="ACCION" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="PC" ColumnName="PC" />
+                <ScalarProperty Name="SIP80_USER" ColumnName="SIP80_USER" />
+                <ScalarProperty Name="WIN_USER" ColumnName="WIN_USER" />
+                <ScalarProperty Name="TRAN_ID" ColumnName="TRAN_ID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+				<ScalarProperty Name="F_COORDINADOR" ColumnName="F_COORDINADOR" />
+				<ScalarProperty Name="F_GV" ColumnName="F_GV" />
+				<ScalarProperty Name="F_DIRECCION" ColumnName="F_DIRECCION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COST_ENLA">
+            <EntityTypeMapping TypeName="SIPNegocioModelo.COST_ENLA">
+              <MappingFragment StoreEntitySet="COST_ENLA">
+                <ScalarProperty Name="PEDIDO" ColumnName="PEDIDO" />
+                <ScalarProperty Name="CVE_DOC" ColumnName="CVE_DOC" />
+                <ScalarProperty Name="CVE_CLPV" ColumnName="CVE_CLPV" />
+                <ScalarProperty Name="NUM_REG" ColumnName="NUM_REG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COST_MSTR">
+            <EntityTypeMapping TypeName="SIPNegocioModelo.COST_MSTR">
+              <MappingFragment StoreEntitySet="COST_MSTR">
+                <ScalarProperty Name="CAN_TOT" ColumnName="CAN_TOT" />
+                <ScalarProperty Name="CVE_DOC" ColumnName="CVE_DOC" />
+                <ScalarProperty Name="CVE_CLPV" ColumnName="CVE_CLPV" />
+                <ScalarProperty Name="NUM_REG" ColumnName="NUM_REG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_Clientes">
+            <EntityTypeMapping TypeName="SIPNegocioModelo.vw_Clientes">
+              <MappingFragment StoreEntitySet="vw_Clientes">
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="CVE_VEND" ColumnName="CVE_VEND" />
+                <ScalarProperty Name="CL8" ColumnName="CL8" />
+                <ScalarProperty Name="PZAULTANIO" ColumnName="PZAULTANIO" />
+                <ScalarProperty Name="FCH_ULTCOM" ColumnName="FCH_ULTCOM" />
+                <ScalarProperty Name="TEXTO" ColumnName="TEXTO" />
+                <ScalarProperty Name="SALDO" ColumnName="SALDO" />
+                <ScalarProperty Name="CRED_DISPO" ColumnName="CRED_DISPO" />
+                <ScalarProperty Name="LIM_CRED" ColumnName="LIM_CRED" />
+                <ScalarProperty Name="DIAS_CRE" ColumnName="DIAS_CRE" />
+                <ScalarProperty Name="DESCUENTO" ColumnName="DESCUENTO" />
+                <ScalarProperty Name="NOMBRE_VENDEDOR" ColumnName="NOMBRE_VENDEDOR" />
+                <ScalarProperty Name="ATENCION" ColumnName="ATENCION" />
+                <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="NOMBRE_CLIENTE" ColumnName="NOMBRE_CLIENTE" />
+                <ScalarProperty Name="RFC" ColumnName="RFC" />
+                <ScalarProperty Name="CLAVE" ColumnName="CLAVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams />
+  </Designer>
+</edmx:Edmx>

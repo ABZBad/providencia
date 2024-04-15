@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="669a3940cd1b47258bf9f2aa46430704" Name="Diagram1" ZoomLevel="44">
+        <EntityTypeShape EntityType="SIPNegocioModelo.vw_EstadoCuenta" Width="1.5" PointX="6.5" PointY="0.5" />
+        <EntityTypeShape EntityType="SIPNegocioModelo.VersionesDetalle" Width="1.5" PointX="9.25" PointY="0.5" />
+        <EntityTypeShape EntityType="SIPNegocioModelo.VersionesPrincipal" Width="1.5" PointX="11" PointY="2.875" />
+        <AssociationConnector Association="SIPNegocioModelo.FK_VersionesPrincipalVersionesDetalle" />
+        <EntityTypeShape EntityType="SIPNegocioModelo.vw_Inventario" Width="1.5" PointX="7.125" PointY="4.25" />
+        <EntityTypeShape EntityType="SIPNegocioModelo.LogUPPedidos" Width="1.5" PointX="0.75" PointY="0.625" />
+        <EntityTypeShape EntityType="SIPNegocioModelo.COST_ENLA" Width="1.5" PointX="2.75" PointY="2.625" />
+        <EntityTypeShape EntityType="SIPNegocioModelo.COST_MSTR" Width="1.5" PointX="2.625" PointY="0.5" />
+        <EntityTypeShape EntityType="SIPNegocioModelo.vw_Clientes" Width="1.5" PointX="1.75" PointY="19.125" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

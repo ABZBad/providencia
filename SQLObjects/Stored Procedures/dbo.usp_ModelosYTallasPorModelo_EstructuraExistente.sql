@@ -1,0 +1,22 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+create procedure [dbo].[usp_ModelosYTallasPorModelo_EstructuraExistente]
+(
+	@CVE_ART		as varchar(25)
+)
+--datos del modelo
+as
+	--Estructura existente
+	SELECT PT.PT_ALMACEN, PT.CLAVE, PROCESO, CANTIDAD, ALMACEN, COMPONENTE, 
+		CASE TIPOCOMP WHEN 48 THEN 'PT' WHEN 49 THEN 'MP' WHEN 50 THEN 'G'+TIPOG END TIPO, COSTOU 
+	FROM aspel_prod30.dbo.PRO_TERM01 PT LEFT JOIN aspel_prod30.dbo.PT_DET01 DET ON PT.CLAVE=DET.CLAVE 
+	WHERE PT.CLAVE= @CVE_ART
+	ORDER BY DET.NUM_REG
+
+
+
+
+
+GO

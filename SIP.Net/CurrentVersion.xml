@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<SIP>
+	<ReleaseDate>2014-06-10T09:00:00</ReleaseDate>
+	<UrlPackage CurrentVersion="8.0.1.7">http://www.trainit.com.mx/ulp2/dotnetfx40/dotNetFx40_Full_x86_x64.exe</UrlPackage>	
+	<UrlOldPackage>http://www.trainit.com.mx/ulp2/sip/sip8.0.19.zip</UrlOldPackage>
+</SIP>

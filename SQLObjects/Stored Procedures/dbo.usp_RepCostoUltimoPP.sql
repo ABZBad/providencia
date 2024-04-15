@@ -1,0 +1,49 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+create procedure [dbo].[usp_RepCostoUltimoPP]
+as
+	SELECT 
+		CLAVE		=	ORD_FAB01.PRODUCTO,
+		DESCRIPCION	=	INVE01.DESCR,
+		LINEA		=	INVE01.LIN_PROD,
+		FCH_ULTCOM	=	convert(date,INVE01.FCH_ULTCOM),
+		PP			=	SUM(ORD_FAB01.CANTIDAD - ORD_FAB01.CANTTERM),
+		Costo.COSTO,
+		IMPORTE		=	SUM(ORD_FAB01.CANTIDAD - ORD_FAB01.CANTTERM) * Costo.COSTO
+	FROM
+		aspel_prod30.dbo.ORD_FAB01
+	inner join
+		aspel_sae50.dbo.INVE01 ON PRODUCTO = CVE_ART
+	inner join
+		(
+			SELECT
+				PT_DET01.CLAVE,
+				SUM(PT_DET01.CANTIDAD * PT_DET01.COSTOU) as COSTO
+			FROM
+				aspel_prod30.dbo.PT_DET01
+			inner join
+				aspel_sae50.dbo.INVE01
+			ON
+				COMPONENTE = CVE_ART
+			WHERE
+				LIN_PROD <> 'INSU'
+				AND
+				TIPOCOMP = 49
+			GROUP BY
+				CLAVE
+			) as Costo
+		on
+		ORD_FAB01.PRODUCTO = Costo.CLAVE
+	group by
+		PRODUCTO,
+		DESCR,
+		LIN_PROD,
+		FCH_ULTCOM,
+		Costo.COSTO
+	having
+		Sum(CANTIDAD - CANTTERM) > 0
+	ORDER BY
+		PRODUCTO
+GO

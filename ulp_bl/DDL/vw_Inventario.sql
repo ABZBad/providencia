@@ -1,0 +1,6 @@
+﻿ALTER VIEW vw_Inventario
+AS
+SELECT     I.CVE_ART AS CLV_ART, I.DESCR, P.PRECIO AS PRECIO1, I.TIPO_ELE
+FROM         aspel_sae50.dbo.INVE01 AS I LEFT OUTER JOIN
+                      aspel_sae50.dbo.PRECIO_X_PROD01 AS P ON I.CVE_ART = P.CVE_ART AND P.CVE_PRECIO = 1
+WHERE     (I.STATUS = 'A')

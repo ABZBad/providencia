@@ -1,0 +1,966 @@
+﻿SIP 8.0.0.37,	28-Ene-2015
+-------------------------
+-Corregido	:	El Duplicador no permite dar de alta Modelos nuevos.
+-Corregido	:	El Duplicador no encuentra el costo unitario al utilizar el buscador de insumos.
+-Corregido	:	Al modificar el precio de las partidas en pantalla, la impresión del pedido
+			no refleja el cambio.
+
+
+SIP 8.0.0.36,	20-Ene-2015
+-------------------------
+-Corregido	:	El Duplicador marca error al guardar la información
+-Corregido	:	El Duplicador no pone en AZUL las tallas nuevas y no pone en ROJO las que están
+			dadas de baja.
+-Corregido	:	El Duplicador no enlaza el Almacén en la búsqueda al presionar la tecla F2.
+-Corregido	:	El Duplicador no muestra la búsqueda del Proceso al presionar F2.
+-Modificación	:	Se eliminó el Almacén 36 del Duplicador.
+-Modificación	:	Se numeró la lista de tallas.
+-Modificación	:	Se puso un Total de tallas dadas de BAJA y ACTIVAS + un TOTAL general.
+-Corregido	:	Al pasar un Pedido a Ventas y enviarlo a la impresora no muestra la leyenda "PEDIDO P{#####}"
+-Corregido	:	Al modificar partidas en las Ordenes de Trabajo las partidas se borran.
+
+
+SIP 8.0.0.35,	9-Ene-2015
+-------------------------
+-Corregido	:	Al pasar el pedido a Ventas la información no pasa correctamente a la tabla UPPEDIDOS.
+
+
+SIP 8.0.0.34,	7-Ene-2015
+-------------------------
+-Corregido	:	EL campo Observaciones se sobrepone al campo Descuento en la impresión de Pedidos.
+
+
+SIP 8.0.0.33,	6-Ene-2015
+--------------------------
+-Modificación	:	Se forzó que la escritura de los Procesos al agregar partidas sea solo en Mayúsculas.
+-Corregido	:	En la pantalla: "Actualizar datos de embarques" al capturar un pedido inexistente marca
+			error y no muestra el mensaje "El pedido x no existe por favor verifique y vuelva a intentarlo."
+-Corregido	:	En la pantalla:	"Capturar órdenes de maquila" no entra en modo Edición cuando la Celdas de
+			las Tallas adquieren el Enfoque.
+-Corregido	:	En la pantalla:	"Capturar órdenes de maquila" si se deja la celda de alguna Talla vacía
+			al hacer Tab no pone 0 (Cero) de forma automática y marca error al guardar la información.
+-Corregido	:	En la pantalla:	"Capturar órdenes de producción" no entra en modo Edición cuando la Celdas de
+			las Tallas adquieren el Enfoque.
+-Corregido	:	En la pantalla:	"Capturar órdenes de producción" si se deja la celda de alguna Talla vacía
+			al hacer Tab no pone 0 (Cero) de forma automática y marca error al guardar la información.
+-Corregido	:	En la pantalla:	"Capturar órdenes de producción" el orden del TAB no es correcto entre las
+			Tallas, ocasionalmente se salta hasta el Botón Procesar.
+-Corregido	:	En la pantalla:	"Capturar órdenes de producción" no muestra por Default el almacen 1, tampoco
+			lo hace cuando se deja vacío este campo despúes de hacer TAB.
+-Modificación	:	Se aumentó Etiqueta y campo de "Nivel de Acceso" en la pantalla de "Permisos de Usuario".
+-Corregido	:	En la pantalla "Simulador de Costos" se aumentó la capacidad de aumentar o disminuair
+			las tallas utilizando las teclas arriba [^] o abajo [v].
+-Corregido	:	El "Reporte de existencias por almacén" está demasiado lento.
+-Corregido	:	Al dar clic en Procesar en la pantalla de "Agregar partidas" no pregunta si se quieren imprimir
+			las órdenes de trabajo.
+-Corregido	:	En la exportación a Excel que genera el clic del botón "Imprimir" de la pantalla
+			"Prioridad maquila" la información y formato es incorrecta.
+-Corregido	:	Al Procesar partidas y pasar el pedido a Ventas cuando la ventana se cierra, los botones
+			que permiten interactuar con el Pedido no se desactivan (al parecer no se refresca el Status
+			del pedido).
+-Corregido	:	Al modificar talla al doble clic en la Pantalla "Eliminar Partidas" el TAB no se comporta
+			correctamente.
+
+
+SIP 8.0.0.32,	10-Dic-2014
+--------------------------
+-Corregido	:	La pantalla Capturar Órdenes de Maquila no muestra por Default el valor 9 en el campo
+			Esq. impuesto.
+-Corregido	:	La pantalla Capturar Órdenes de Maquila no permite el valor 0 en el campo Costo.
+-Corregido	:	El orden de los Tabuladores no es correcto cuando se escriben modelo con pocas tallas como
+			CAGAMOSH en la pantalla Capturar Órdenes de Maquila.
+-Corregido	:	El orden de los Tabuladores no es correcto cuando se escriben modelo con pocas tallas como
+			CAGAMOSH en la pantalla Capturar Órdenes de Producción.
+-Corregido	:	En la pantalla Capturar Órdenes de Producción no muestra por Default el valor 1 en el Almacén.
+-Corregido	:	En la pantalla Capturar Órdenes de Producción los campos de las tallas no entran en modo
+			Edición al adquirir el enfoque.
+-Corregido	:	En la pantalla Capturar Órdenes de Maquila los campos de las tallas no entran en modo			
+			Edición al adquirir el enfoque.
+-Corregido	:	El orden de los Tabuladores no es correcto cuando se escriben modelo con pocas tallas como
+			CAGAMOSH en la pantalla de Agregar Partididas a pedidos.
+-Corregido	:	La celda de la Talla se queda en blanco cuando suprimir o borrar el dato contenido en ella
+			en la pantalla de Agregar Partididas a pedidos, debería dejar Cero.
+-Corregido	:	El orden de los Tabuladores no es correcto cuando se escriben modelo con pocas tallas como
+			CAGAMOSH en la pantalla Modificar Tallas que aparece al doble clic de  Eliminar/Modificar Partidas.
+-Corregido	:	La celda de la Talla se queda en blanco cuando suprimir o borrar el dato contenido en ella
+			en la pantalla Modificar Tallas que aparece al doble clic de  Eliminar/Modificar Partidas,
+			debería dejar Cero.
+			
+
+SIP 8.0.0.31,	09-Dic-2014
+--------------------------
+-Corregido	:	La Vista que devuelve el inventario no filtra STATUS = 'A' de la Tabla INVE01 al consultar
+			Modelos en la pantalla de Agregar partidas a Pedidos.
+
+
+SIP 8.0.0.30,	08-Dic-2014
+--------------------------
+-Corregido	:	El campo OC no está limitado y al escribir valores muy largos provoca error y el pedido
+			se cambia a "0" permitiendo capturar partidas ocasionando que la impresión de pedidos salga
+			en blanco.
+-Corregido	:	Al capturar el modelo "PC65MOSH" o "BAPRBLSH" la pantalla de Agregar Partidas marca error.
+
+
+SIP 8.0.0.29,	04-Dic-2014
+---------------------------
+-Modificación	:	Se agregó Botón en la pantalla de Permisos de usuario para seleccionar/deseleccionar
+			todos los permisos del Sistema.
+-Corregido	:	El proceso Regenerar Cartera viva borra los años anteriores en vez del año solicitado.
+-Corregido	:	Reporte de Ventas en pesos y prendas por agente marca error de División entre Cero.
+-Corregido	:	La pantalla Orden de Maquila no muesta por Default el valor "9" en el campo Esq. de Imp.
+-Corregido	:	La pantalla Orden de Maquila no permite capturar "0" en el campo costo, lo pide > 0
+-Corregido	:	La pantalla Orden de Maquila no permite capturar Claves de Proveedor Alfanuméricas
+-Modifiación	:	Al dar clic en Procesar de la pantalla Generar Órdenes de Producción de Línea en el paso
+			que corresponde a Liberar la Orden marcaba error de conversión de VarChar a DateTime, se quitó el
+			Convert() al insertar el registro para evitar el error.
+-Corregido	:	en la pantalla Prioridad de Maquila el campo correspondiente a la clave del Proveedor
+			permite capturar letras minúsculas lo que provoca que no se encuentren registros al dar
+			clic en el botón Buscar.
+-Corregido	:	El reporte Base SMIN marca error.
+-Corregido	:	El reporte Base SMIN sin PP marca error.
+-Corregido	:	Se alineó una Fecha a la dercha en el archivo de Excel que exporta el reporte
+			IMP OTs de Producción x MODELO
+-Corregido	:	En Ordenes de maquila la clave de proveedor no permite capturar letras ya que la clave
+			del proveedor es un dato alfanumérico.
+-Corregido	:	Error al abrir la pantalla Capturar Pedido en Aspel-SAE 5.0.
+-Corregido	:	La cantidad de Prendas no cuadra en el reporte Pedidos con más de 20 dias.
+-Modificación	:	Se cambiaron nombres de variables en el reporte Reconstrucción y
+			costeo de mermas entre fechas (C/MO) (B.D. de Producción es Case Sensitive).
+-Modificación	:	Se cambiaron nombres de variables en el reporte Reconstrucción y
+			costeo de inventario PP a una fecha (B.D. de Producción es Case Sensitive).
+-Modificación	:	Se cambió el costo de bordado de 3 a 3.5 en el reporte que emite la pantalla
+			Costos de Bordado - Facturas Maquila.
+-Corregido	:	Reporte de Costos de Bordado - Facturas Maquila no mostraba fec, hora de impresión.
+-Corregido	:	En la pantalla Capturar Ruta de procesos no lista correctamente los pedidos y no se
+			refrescaba el detalle cambiando de renglón en el grid superior.
+-Corregido	:	Al dar clic en "Agregar" nuevo pedido (en el icono de +) el foco no se manda al campo "OC"
+-Corregido	:	El campo Precio de la pantalla de Pedidos permite capturar letras y provoca errores,
+			debe ser solo numérico con decimales.
+-Modificación	:	Al dar clic en "Procesar" de la pantalla Pedidos cambiar el cursor a un Reloj de Arena.
+-Corregido	:	Cuado se deja vacía la celda de la cantidad al capturar las tallas y se hace un TAB marca error
+			por la celda ha quedado nula.
+-Modificación	:	"Supr" o "BackSpace" no funcionaba al capturar las tallas, se inicia en modo
+			de Edición al adquirir el foco dentro de la celda.
+-Corregido	:	En la impresión de la Orden de Pedido la columna Cantidad por cada modelo está vacía.
+-Corregido	:	En la impresión de la Orden de Pedido el total de las prendas en la parte inferior derecha
+			está vacía (en algunos casos sí sale el dato, cuando se captura nuevo no).
+-Corregido	:	En la impresión de la Orden de Pedido la descripción del Modelo está vacía
+			(en algunos casos sí sale el dato, cuando se captura nuevo no).
+-Corregido	:	En la impresión de la Orden de Pedido las tallas salen cortadas.
+-Corregido	:	En la pantalla de Eliminar/Modificar Partidas, al actualiza una Partida ya se aumentando las
+			las tallas o actualizando el precio el formato de impresión de Pedido sale mal.
+-Corregido	:	En la pantalla de Eliminar/Modificar Partidas, al eliminar una Partida esta sigue saliendo en
+			el formato de impresión de Pedido
+-Corregido	:	En la pantalla de Eliminar/Modificar Partidas, al modificar las Tallas con doble clic y Guardar
+			el grid de atrás no se refresca ya que continúa mostrando los valores de las tallas originales.
+-Corregido	:	En la pantalla de Eliminar/Modificar Partidas al modificar las Tallas con doble clic y Guardar
+			no pregunta si se desea modificar el Precio ya que sistema de VB6 sí lo hace.
+-Corregido	:	En la pantalla de Eliminar/Modificar Partidas al modificar al modificar el Precio y Guardar
+			el grid de atrás no se refresca ya que continúa mostrando el precio original.
+-Corregido	:	En la pantalla de UpPedidos, al consultar un pedido una vez que abre la pantalla y se intenta
+			modificar una fecha marca NullReferenceException.
+-Corregido	:	En la pantalla de Eliminar/Modificar Partidas hay dos botones, "Agregar Proceso" y
+			"Guardar Proceso", al dar clic en "Agregar Proceso", escribir y guardar todo el botón de
+			"Agregar Proceso" desaparece.
+-Modificación	:	En el reporte de Transferencia de Inventarios la fecha no se imprime.
+
+
+SIP 8.0.0.28,	18-Nov-2014
+---------------------------
+-Corregido	:	En la pantalla de "Permisos de usuario" al cambiarse de renglón con el teclado
+			marca Error.
+
+
+SIP 8.0.0.27,	12-Nov-2014
+---------------------------
+-Corregido	:	En "Eliminar partidas" dentro de los Pedidos, no permite modificar las tallas
+			en el doble click en el renglón de la Partida seleccionada.
+-Corregido	:	En "Eliminar partidas" dentro de los Pedidos, no permite modificar el Precio
+			en el doble click en el renglón de la Partida seleccionada.
+
+
+SIP 8.0.0.26,	03-Nov-2014
+---------------------------
+-Corregido	:	"Reporte diario de facturación" (Folios Nuevos y Anteriores)
+			el reporte muestra registros de menos, y al consultar un solo dia
+			no saca registros.
+-Modificación	:	Al presionar Flecha Arriba [^] o Flecha Abajo [v] el cursor ya se cambia
+			al siguiente control dentro del Formulario.
+-Corregido	:	La búsqueda de los pedidos es incorrecta, no filtra por Agente,
+			se modifica código en la aplicación y código en la base de datos
+-Corregido	:	Al capturar pedidos el campo OC no se abre para captura.
+-Modificación	:	Se mejoró la navegación por medio de la tecla TAB entre Objetos en el formulario
+			de "Agregar partidas"
+-Modificación	:	Se manda mensaje de aviso cuando el código del "Cómo" no pertenece al cliente actual.
+-Corregido	:	Al guardar la partida o reescribir el modelo en "Agregar Partidas" no se limpian
+			algunas cajas de texto y el detalle de los Procesos.
+-Corregido	:	Marca "Referencia a Objeto no establecida como instancia" al navegar entre las
+			tallas con el Tabulador.
+-Corregido	:	En la impresión de Pedidos no se muestra el nombre del equipo que mandó imprimir.
+-Corregido	:	No permite eliminar el Proceso seleccionado con la tecla SUPR o DEL en la pantalla
+			de "Eliminar o Modificar Partidas" en la pestaña de Pedidos.
+-Corregido	:	No deja cambiar el tamaño de la ventana de "Pedidos" cuando se maximiza y luego se
+			intenta cambiar manualmente el tamaño de la ventana a su estado original.
+-Corregido	:	Al capturar la Órdenes de Trabajo el sistema pide el Precio hecho que es incorrecto.
+-Corregido	:	Al capturar la Órden de Trabajo la pantalla no se cierra.
+
+
+SIP 8.0.0.25,	24-Oct-2014
+---------------------------
+-Modificación	:	Reporte de Staff, se cambió el texto: "Promedio de prendas por proceso"
+			por : "Promedio de prendas por pedido en proceso"
+-Modificación	:	Cadena de conexión ahora apunta a Server de Producción
+
+SIP 9.0.0.59,	14-NOV-2018
+---------------------------
+-Corregido	:	Al procesar los Códigos de Barra de OP muy grandes el sistema se colapsaba generando la orden incompleta.
+
+SIP 9.0.0.60,	19-DIC-2018
+---------------------------
+-Modificación	:	Reporte de pedidos de mas de 20 días, se agregaron indicadores
+-Modificación	:	Reporte de Carga por departamentos, se agregaron indicadores y nueva opción
+			para seleccionar Bordado, Estampado e Iniciales
+
+SIP 9.0.0.61,	02-ENE-2019
+---------------------------
+-Actualización	:	Se agrega nuevo reporte de Programa de Empaque
+-Modificación	:	Alta de Pedido, genera ruta de forma automática
+-Modificación	:	Automatización de flujo de Retroalimentación de Mano de Obra
+-Modificación	:	Se agregó el campo descripción al Duplicador
+-Corregido	:	Al agregar/eliminar partidas de un pedido no se agrega el Proceso Largo.
+
+SIP 9.0.0.62	03-ENE-2019
+---------------------------
+-Corrección	:	ScrollBar de tallas en duplicador no permite ver listado completo.
+
+SIP 9.0.0.63	03-ENE-2019
+---------------------------
+-Corrección	:	Escaner de código de barras duplicados (No distingue minúsculas de mayúsculas).
+
+SIP 9.0.0.64
+---------------------------
+-Actualizacion	:	Modificaciones a reportes de Empaque y prendas 20 días.
+
+SIP 9.0.0.65
+---------------------------
+-Actualización	:	Se agrega la funcionalidad de generación de OP masiva para especiales
+
+SIP 9.0.0.66
+---------------------------
+-Corrección	:	Se agregan observaciones de OP y OM, se agrega el prefijo X a la OM.
+-Modificación	:	Se genera funcionalidad para poder descartar Modelos de la Generacion masiva, asimismo tallas en la OP de Especiales.
+
+SIP 9.0.0.70
+---------------------------
+-Corrección	:	Se corrige el bug de alta de clientes duplicados.
+
+SIP 9.0.0.71
+---------------------------
+-Actualización	:	Se agrega reporte de Facturación Crédito y recepción de facturas.
+
+SIP 9.0.0.72
+---------------------------
+-Modificación	:	Se agregan totales de recepción, credito y facturas al reporte de Facturación Crédito
+
+SIP 9.0.0.73
+---------------------------
+-Corrección	:	Se ordenan por tallas las OP Especiales.
+-Corrección	:	Se modifica el reporte de Facturación Crédito.
+
+SIP 9.0.0.74
+---------------------------
+-Corrección	:	Bug de calculo de facturas capturadas vs recibidas en reporte de Facturación Crédito.
+-Corrección	:	Se ajustan formatos y tamaños de letra en reporte de Facturación Crédito.
+-Modificación	:	Se agrega el Cliente al reporte de Facturación Crédito.
+
+SIP 9.0.0.75
+---------------------------
+-Corrección	:	Se corrige reporte de existencias, marcando en color amarillo los valores negativos.
+-Modificación	:	Se agrega almacén 8 al reporte de Staff.
+-Modificación	:	Se agrega columna a reporte de fechas de entrega, indicador de pedido especial y procesos aplicables.
+-Modificación	:	Se modifica reporte de OP agregando fecha de alta de la OP.
+-Actualización	:	Nuevo reporte de OP a un rango de fechas.
+-Modificación	:	Se hace mas grande la letra en código de barras
+
+SIP 9.0.0.76
+---------------------------
+-Corrección	:	Se corrige reporte de Staff (Almacén 8).
+-Modificación	:	Se cambia nombre de reporte de Recepción de facturas emitidas vs recibidas.
+
+SIP 9.0.0.77
+---------------------------
+--Modificación	:	Se agrega log de proceso de recepcion de OP por código de barras.
+
+SIP 9.0.0.78
+---------------------------
+--Corrección	:	Se corrige recepción de defectuosos por código de barras.
+
+SIP 9.0.0.79
+---------------------------
+--Actualización	:	Se agrega opción de reporte de facturación para Contabilidad (incluye serie F).
+
+SIP 9.0.0.80
+---------------------------
+--Actualización	:	Modulo de Facturación de pedidos.
+
+SIP 9.0.0.81
+---------------------------
+--Actualización	:	Bloqueo de carga de CSD para usuarios no autorizados.
+
+SIP 9.0.0.82
+---------------------------
+--Corrección	:	Se corrige transferencia por codigo de barras, para que imprima reporte aunque existan errores por existencias en la transferencia.
+
+SIP 9.0.0.83
+---------------------------
+--Corrección	:	Se agrega mensaje de validación de estructura al facturar pedidos.
+
+SIP 9.0.0.84
+---------------------------
+--Modificación	:	Se permite la edición de simulaciones de compra.
+
+SIP 9.0.0.85
+---------------------------
+--Actualización	:	Se agrega funcionalidad para captura de pedidos DAT.
+
+SIP 9.0.0.86
+---------------------------
+--Corrección	:	Se cambio la clave tipo_doc para pedidos DAT
+
+SIP 9.0.0.87
+---------------------------
+--Corrección	:	Se  agrega color diferente a pedidos por ancitipado en reporte 20 días.
+
+SIP 9.0.0.88
+---------------------------
+--Corrección	:	Se  agregan validaciones extra al proceso de facturación de pedidos.
+
+SIP 9.0.0.89
+---------------------------
+--Corrección	:	Se ajusta proceso de facturacion de pedidos y se agrega log del proceso.
+
+SIP 9.0.0.90
+---------------------------
+--Corrección	:	Se corrige fecha en reporte de OP Liberadas y No Liberadas
+
+SIP 9.0.0.91
+---------------------------
+--Corrección	:	Se corrige url de actualizaciones a IP local.
+
+SIP 9.0.0.92
+---------------------------
+--Corrección	:	Se agregan claves SAT para facturación electrónica.
+--Modificación	:	Se agregan claves SAT para facturación electrónica.
+
+SIP 9.0.0.93
+---------------------------
+--Actualización	:	Se agregan descuentos a pedidos DAT
+--Actualización	:	Para los pedidos DAT, se agrega el total a la vista impresa.
+
+SIP 9.0.0.94
+---------------------------
+--Corrección	:	Se modifica el total de la vista impresa de pedidos DAT para incluir el IVA
+
+SIP 9.0.0.95
+---------------------------
+--Actualización	:	Se desglozan los descuentos en la captura de pedidos DAT en SAE
+
+SIP 9.0.0.96
+---------------------------
+--Corrección	:	Se muestran partidas en UpPedidos para pedidos DAT.
+--Modificación	:	Se agrega desglose de Subtotal, IVA y Total para pedidos DAT.
+--Modificación	:	Se agregan los procesos de Largo y Flete para pedidos DAT.
+
+SIP 9.0.0.97
+---------------------------
+--Corrección	:	Se corrgie desglose de Subtotal, IVA y Total para pedidos P
+
+SIP 9.0.0.98
+---------------------------
+--Modificación	:	Se agrega % de descuento a vista impresa de pedido DAT.
+
+SIP 10.0.0.1
+---------------------------
+--Actualización	:	Se incorpora flujo de autorización de códigos especiales.
+--Actualización	:	Se incorporan pedidos de Mostrador.
+--Actualización	:	Se incorporan comisiones a pedidos de Mostrador.
+
+SIP 10.0.0.2 - 10.0.0.8
+---------------------------
+--Actualización	:	Se ajustan procesos para pedidos DAR, Mostrador y P
+--Correccion	:	Se corrige función para el cálculo de comisión con base a Forma de Pago.
+
+SIP 10.0.0.9
+---------------------------
+--Actualización	:	Se integra Pedido de ecommerce.
+--Actualización	:	Se integra campo Filial en alta de cliente SAE.
+
+SIP 10.0.0.10
+---------------------------
+--Corrección	:	Se corrige impresion de Pedido Ecommerce.
+
+SIP 10.0.0.11 - 10.0.0.12
+---------------------------
+--Modificación	:	Se cambia nombre de archivo masivo OP.
+--Corrección	:	Se incluye pedido Ecommerce a UPPedidos.
+
+SIP 10.0.0.13
+---------------------------
+--Corrección	:	Se corrige foliado de Códigos de Barras
+
+SIP 10.0.0.14
+---------------------------
+--Corrección	:	Se corrige descuentos negativos en la captura SAE.
+
+SIP 10.0.0.15
+---------------------------
+--Modificación	:	Se agrega columna de tipo pedido al reporte de desempeños por área.
+
+SIP 10.0.0.16
+---------------------------
+--Corrección	:	Se corrige error al liberar pedidos SAE de clientes nuevos (Clave 10000 en adelante).
+
+SIP 10.0.0.17
+---------------------------
+--Corrección	:	Se amplian los campos de valor para reporte de bordado, ya que salian ### en lugar de los montos totales.
+
+SIP 10.0.0.18
+---------------------------
+--Corrección	:	Se corrige el calculo total de prendas en el módulo de transferencias por modelo.
+
+SIP 10.0.0.19
+---------------------------
+--Corrección	:	Se corrige la captura a SAE cuando el mismo articulo tiene tallas sin procesos y tallas con procesos.
+
+SIP 10.0.0.20
+---------------------------
+--Actualización	:	Se agrega el campo de # Cotización en el alta de pedidos para enlazar Prospect.
+
+SIP 10.0.0.21
+---------------------------
+--Corrección	:	Se corrige el cálculo de descuentos en la vista impresa del Pedido.
+
+SIP 10.0.0.22
+---------------------------
+--Corrección	:	Se corrige la modificación de tallas para artículos con más de 40 tallas.
+
+SIP 10.0.0.23
+---------------------------
+--Corrección	:	Validación de imagenes físicas de logotipos.
+
+SIP 10.0.0.24
+---------------------------
+--Actualización	:	Se agrega generación de NC.
+
+SIP 10.0.0.25
+---------------------------
+--Corrección	:	Se corrige algoritmo de foliado para NC.
+
+SIP 10.0.0.26
+---------------------------
+--Actualización	:	Se agrega ingreso de NC a inventarios.
+
+SIP 10.0.0.27
+---------------------------
+--Actualización	:	Se agrega check de ingreso de Facturas SAT al modulo de ingreso de Facturas.
+--Actualización	:	Se agrega Reporte de ingreso de facturas SAT.
+
+SIP 10.0.0.28
+---------------------------
+--Actualización	:	Se agrega reporte de Provisión de Nómina NOI/COI.
+--Actualización	:	Se implementa flujo de Control de Pedidos Electrónicos.
+
+SIP 10.0.0.29
+---------------------------
+--Corrección	:	Se quitan los pedidos Ecommerce, DAT y Mostrador del flujo de Pedidos Electrónicos.
+--Corrección	:	Se corrige consulta de línea de tiempo de Pedidos Electrónicos.
+
+SIP 10.0.0.30
+---------------------------
+--Corrección	:	Se corrige la asignación de codigo para cotización cuando se crean tallas nuevas.
+
+SIP 10.0.0.31
+---------------------------
+--Actualización	:	Se quitan observaciones de Dirección General en la autorización de Pedidos Electrónicos.
+--Actualización	:	Se cambia el orden de GV y CP en UPPedidos.
+--Actualización	:	Se agrega el campo #Cotización en alta de Pedidos Especiales.
+--Actualización	:	Se agrega rechazo de Pedidos para el Planeador en flujo de Pedidos Electrónicos.
+
+SIP 10.0.0.32
+---------------------------
+--Corrección	:	Se valida que no se incluya proceso L en la impresion de las OT.
+
+SIP 10.0.0.33
+---------------------------
+--Actualización	:	Se modifica el comportamiento de la pantalla de Control pedidos electrónicos para que actualice de forma auctomática cada 15 min.
+--Actualización	:	Se agrega botón de referscar para consultar pedidos y solicitudes nuevas en Pedidos Electrónicos.
+--Actualización	:	Se agrega columna del ejecutivo a Pedidos Eletrónicos.
+
+SIP 10.0.0.34
+---------------------------
+--Actualización	:	Se habilita la posibilidad de crear el Pedido Especial de forma parcial desde la Solicitud de Código Electrónico, para ello el usuario deberá de cerrar el Flujo a traves del menú "Asignar número de Pedido".
+
+SIP 10.0.0.35
+---------------------------
+--Corrección	:	Se habilita fecha automática para UPPEdidos en Pedidos Especiales Electrónicos.
+
+SIP 10.0.0.36
+---------------------------
+--Corrección	:	Se corrige enlace de pedido especial con la solicitud.
+--Actualización	:	Se agregan observaciones a Dirección cuando se asigna precio de solicitud electrónica.
+
+SIP 10.0.0.37
+---------------------------
+--Actualización	:	Todas las ventanas que son independientes deberán de poderse visualizar en segundo plano en Control Pedidos Electrónicos.
+--Corrección	:	Se corrige el reload del grid, para no perder la selección en Control Pedidos Electrónicos.
+
+SIP 10.0.0.38
+---------------------------
+--Actualización	:	Se agrega reporte de prendas autorizadas por DG.
+--Actualización	:	Se agrega total de prendas a pedidos electrónicos.
+--Actualización	:	Se agrega nombre del vendedor en vista impresa de firmas.
+
+SIP 10.0.0.39
+---------------------------
+--Actualización	:	Se habilitan las solicitudes electrónicas para modificación cuando se rechazan.
+--Actualización	:	Se limita a 255 caracteres las observaciones para OP Masiva.
+--Actualización	:	Se ordena alfabeticamente los Modelos en la OP Masiva.
+--Corrección	:	Se recarga el listado de Pedidos/Solicitudes electrónicas cuando se procesa 1 Pedido/Solicitud.
+--Actualización	:	Optimizacion de consultas para abrir vista impresa y abrir buscador del cliente (Sección Estado de cuenta).
+
+SIP 10.0.0.40
+---------------------------
+--Actualización	:	Se agrega menú para Reasignación de Cliente de Solicitudes Electrónicas.
+--Actualización	:	Se agrega menú para eliminar Solicitudes Electrónicas solo para Administrador de Sistema.
+--Actualización	:	Se agrega rechazo a CPR en Flujo de Pedidos Electrónicos Especiales.
+--Actualización	:	Se finaliza el Flujo de Pedidos Electrónicos Especiales cuando CPR crear la OP.
+--Actualización	:	La fecha de impresion UPPedidos se modifica para que se aplique con GO.
+
+SIP 10.0.0.41
+---------------------------
+--Corrección	:	Se agrega el usuario que crea el pedido en Control de Pedidos Electrónicos.
+
+SIP 10.0.0.42
+---------------------------
+--Corrección	:	Se limita a 255 caracteres las observaciones para OP Masiva.
+
+SIP 10.0.0.43
+---------------------------
+--Corrección	:	Se corrige problema de observaciones al generar la OP Masiva.
+
+SIP 10.0.0.44
+---------------------------
+--Actualización	:	Se ajusta Reporte de Provisión NOI para crear detalle de Importes Gravados y Exentos.
+--Actualización	:	Se agrega Reporte de Movimientos MP.
+
+SIP 10.0.0.45
+---------------------------
+--Corrección	:	Se agrega fila de Totales Generales y rendondeo a Reporte de Movimientos MP.
+
+SIP 10.0.0.46
+---------------------------
+--Corrección	:	Se corrige la modificación de Solicitud de Código para el campo de especificaciones.
+
+SIP 10.0.0.47
+---------------------------
+--Corrección	:	Se corrige el filtro de conceptos en reporte de movimimiento MP.
+--Modificación	:	Ajuste de columnas Gravado y Exento en reporte de Provisión de Nómina.
+
+SIP 10.0.0.48
+---------------------------
+--Corrección	:	Se corrige Bug que eliminaba las firmas previas al no procesar las autorizaciones de los Pedidos Electrónicos de Línea.
+
+SIP 10.0.0.49
+---------------------------
+--Actualización	:	Actualización sistema ASPEL-SAE 8.0.
+
+SIP 10.0.0.50
+---------------------------
+--Corrección	:	Se corrige estructura de BD SAE 8.0 para detalle de procesos de pedidos.
+
+SIP 10.0.0.51
+---------------------------
+--Corrección	:	Se corrige estructura de BD SAE 8.0 para Logotipos y Usuarios.
+
+SIP 10.0.0.52
+---------------------------
+--Corrección	:	Se corrige el proceso de Eliminar/Agregar partidas en pedidos para complementar la información de los procesos.
+--Actualización	:	Se agrega validación de Estatus de Solicitud al área de GV.
+
+SIP 10.0.0.53
+---------------------------
+--Actualización	:	Actualización sistema ASPEL-PROD 4.0.
+
+SIP 10.0.0.54
+---------------------------
+--Corrección	:	Se corrige la carga de costo unitario para insumos en el duplicador de costos.
+
+SIP 10.0.0.55
+---------------------------
+--Corrección	:	Se corrige captura de tallas en formato alfanumérico.
+
+SIP 10.0.0.56
+---------------------------
+--Corrección	:	Se corrige escalado/resolución de Simulador de Costos.
+
+SIP 10.0.0.57
+---------------------------
+--Actualización	:	Se crea usuario de tipo Consulta para Control Pedidos.
+--Actualización	:	Se adiciona funcionalidad de Eliminar/Habilitar pedido solo 1 vez, desde el menú Sistemas.
+--Actualización	:	Se agrega formato Fecha/Hora al reporte de UPPEdidos/SAE.
+--Actualización	:	Se agrega el área en el alta de usuarios.
+
+SIP 10.0.0.58
+---------------------------
+--Corrección	:	Se agregan observaciones en la creación de la OP.
+
+SIP 10.0.0.59
+---------------------------
+--Actualización	:	Se agrega campo Peso al duplicador de códigos.
+
+SIP 10.0.0.60
+---------------------------
+--Corrección	:	Se limpia la información cuando se crean varias solicitudes de código especial para el mismo cliente.
+
+SIP 10.0.0.61
+---------------------------
+--Corrección	:	Se corrige alta de estructura de códigos.
+
+SIP 10.0.0.62
+---------------------------
+--Corrección	:	Se corrige permisos especiales para autorización de pedidos de DG.
+
+SIP 10.0.0.63
+---------------------------
+--Corrección	:	Se limpia la información cuando se crean varias solicitudes de código especial para el mismo cliente.
+
+SIP 10.0.0.64
+---------------------------
+--Modificación	:	Se agrega condicionante de componente tipo INS para el duplicador de estructura.
+
+SIP 10.0.0.65
+---------------------------
+--Corrección	:	Se agrega log de cancelación a UPPEdidos.
+--Corrección	:	Se corrige el tipo de insumo en duplicador de códigos.
+--Actualización	:	Se ajusta el reporte de exportación de UPPedidos de Ventas.
+
+SIP 10.0.0.66
+---------------------------
+--Actualización	:	Se agrega precio asignado al detalle de solicitudes de código especial.
+--Actualización	:	Se ajusta tamaño de campo observaciones de solicitudes de código especial.
+--Corrección	:	Se corrige bitacora de SAE.
+
+SIP 10.0.0.67
+---------------------------
+--Corrección	:	Se guardan los precios simulados para componentes de tipo insumo.
+--Actualización	:	Se corrige cálculo de importes y cantidades en reporte de grupo carso para facturas divididas.
+
+SIP 11.0.0.1
+---------------------------
+--Actualización	:	Upgrade de Framework 4.8.
+
+SIP 11.0.0.2
+---------------------------
+--Actualización	:	Se agrega división de pedidos para facturación anticipada.
+
+SIP 11.0.0.3
+---------------------------
+--Actualización	:	Se agrega nuevos pedidos de mostrador sin procesos MP.
+
+SIP 11.0.0.4
+---------------------------
+--Corrección	:	Se corrige interfaz de detalle de partidas en UPPedidos.
+
+SIP 11.0.0.5
+---------------------------
+--Corrección	:	Se corrige proceso de división de pedidos para Linea y Especiales.
+
+SIP 11.0.0.6
+---------------------------
+--Corrección	:	Se corrige etiqueta de captura de pedido SAE para pedidos MP.
+
+SIP 11.0.0.7
+---------------------------
+--Corrección	:	Se corrige vista impresa de pedidos MP.
+
+SIP 11.0.0.8
+---------------------------
+--Corrección	:	Se integra pedido restante a UPPedidos.
+--Actualización	:	Se agrega nuevo campo descripcion a duplicador de pedidos.
+--Actualización	:	Se agrega nuevo campo de factor 
+
+SIP 11.0.0.9
+---------------------------
+--Corrección	:	Se corrige captura de pedidos MP en SAE80
+
+SIP 11.0.0.10
+---------------------------
+--Corrección	:	Se corrige No Factura en UPPedidos para Mostrador MP.
+
+SIP 11.0.0.11
+---------------------------
+--Corrección	:	Se corrige alta de nuevas tallas en código de barras para el nuevo campo Etiqueta.
+
+SIP 11.0.0.12
+---------------------------
+--Actualización	:	Se agrega Régimen Fiscal a pantalla de Alta de Clientes SAE8.0
+
+SIP 11.0.0.13
+---------------------------
+--Corrección	:	Se corrige guardado de información para Clientes SAE8.0
+
+SIP 11.0.0.14
+---------------------------
+--Actualización	:	Se agregan NV a reporte de Facturación y Reporte de prendas y pesos por agente
+--Actualización	:	Se omite serie G en reporte de Facturación y Reporte de prendas y pesos por agente
+
+SIP 11.0.0.15
+---------------------------
+--Actualización	:	Se agregan fecha de última modificación de costo a simulador.
+--Actualización	:	Se agregan inidicador de Pedidos Eliminados/Habilitados a control pedidos.
+
+SIP 11.0.0.16
+---------------------------
+--Actualización	:	Se agrega candado evitar alta/edición de Pedidos para usuario mostrador.
+
+SIP 11.0.0.17
+---------------------------
+--Corrección	:	Se agrega candado evitar alta/edición de Pedidos para usuario mostrador.
+
+SIP 11.0.0.18
+---------------------------
+--Actualización	:	Se agrega identificador de Tipo de Pedidos a Control Pedidos.
+--Actualización	:	Se agrega prefijo PD a pedidos divididos.
+
+SIP 11.0.0.19
+---------------------------
+--Corrección	:	Se corrige error de eliminar/modificar partidas para pedidos DAT.
+
+SIP 11.0.0.20
+---------------------------
+--Actualización	:	Se agrega módulo de Gestión de modelos para cotizaciones Prospect.
+--Actualización	:	Se setea por default el mes corriente en el filtro de reporte de comparativo P. Lista VS P. Facturado.
+
+SIP 11.0.0.21
+---------------------------
+--Corrección	:	Se corrige función de menús de Permisos Especiales en control pedidos.
+
+SIP 11.0.0.22
+---------------------------
+--Actualización	:	Se agrega columnas totales a la sección de  de recomendado, existencias y MH al reporte de existencias.
+
+SIP 11.0.0.23
+---------------------------
+--Corrección	:	Se corrige tamaño de columna Pedido para reporte de maquila
+--Corrección	:	Se corrige duplicidad de pedidos cuando se habilitan pedidos divididos.
+
+SIP 11.0.0.24
+---------------------------
+--Modificación	:	Se cambia proceso Flete por Logistica.
+
+SIP 11.0.0.25
+---------------------------
+--Actualización	:	Se agrega Flujo OP.
+
+SIP 11.0.0.26
+---------------------------
+--Modificación	:	Ajuste a reporte de OP, se agregan columnas de OM y Taller.
+--Modificación	:	Ajuste a reporte de desempeño por área, se agregan columnas de Fecha Surtido, Empaque y Embarque.
+--Actualización	:	Se agrega Reporte de OP y OM.
+
+SIP 11.0.0.27
+---------------------------
+--Corrección	:	Se corrige duplicidad en Reporte de OP para las columnas OM y Taller.
+
+SIP 11.0.0.28
+---------------------------
+
+SIP 11.0.0.29
+---------------------------
+--Modificación	:	Se agrega menú SIVO.
+--Modificación	:	Se agrega impresión de pedido a Flujo de Linea para actividad de Programación.
+
+SIP 11.0.0.30
+---------------------------
+--Modificación	:	Se agrega PL a flujo de pedidos especiales.
+
+SIP 11.0.0.31
+---------------------------
+--Modificación	:	Se bloque consulta de hoja de cuotas para área GO.
+--Corrección	:	Se agrupan tallas en Flujo de OP.
+
+SIP 11.0.0.32
+---------------------------
+--Modificación	:	Cambio de nombre de columnas y agrupacion al reporte de existencias.
+
+SIP 11.0.0.33
+---------------------------
+--Modificación	:	Cambio de nombre calculo de columna diferencia al reporte de existencias.
+
+SIP 11.0.0.34
+---------------------------
+--Modificación	:	Se agrega OP de forma automática al proceso de Flujo OP.
+--Modificación	:	Se agrega columna "Cancelación SAT" a reporte de Staff.
+
+SIP 11.0.0.35
+---------------------------
+--Corrección	:	Se cambia cálculo y posición de la columna "Cancelación SAT" a reporte de Staff.
+
+SIP 11.0.0.36
+---------------------------
+--Actualización	:	Se agrega Reporte de Staff a nuevo menú de Administración.
+
+SIP 11.0.0.37
+---------------------------
+--Actualización	:	Se agrega puntadas al reporte de bordado.
+
+SIP 11.0.0.38
+---------------------------
+--Actualización	:	Integración SIVO.
+
+SIP 11.0.0.39
+---------------------------
+--Corrección	:	Se agregan Expediente Digital para pedidos DAT y Mostrador.
+--Corrección	:	Se agrega columna Clave a listado de Solicitudes de Código.
+--Corrección	:	Se agrega visibilidad del 100% de tallas al Modificar un Pedido.
+
+SIP 11.0.0.40
+---------------------------
+--Corrección	:	Se corrige identificación de pedidos E-Commerce
+
+SIP 11.0.0.41
+---------------------------
+--Corrección	:	Se agrega visibilidad del 100% de tallas al Transferir.
+--Actualización	:	Se agrega vista impresa de notificaciones.
+
+SIP 11.0.0.42
+---------------------------
+--Corrección	:	Vista impresa de DAT totalizado.
+--Corrección	:	Diseño de botón de impresión de notificaciones.
+
+SIP 11.0.0.43
+---------------------------
+--Corrección	:	Se corrige captura en SAE de pedidos EC.
+--Corrección	:	Se quita duplicidad de notificaciones.
+--Corrección	:	Se ajusta función de cálculo de pedidos virtuales, considerando pedidos NO FACTURADOS.
+
+SIP 11.0.0.44
+---------------------------
+--Modificación	:	Se quita GV en pedidos mostrador con y sin procesos y pedidos e-commerce.
+--Modificación	:	Se ajuste orden de columnas SIVO.
+--Corrección	:	Se corrige duplicidad de modelos en alta de pedidos.
+
+SIP 11.0.0.45
+---------------------------
+--Corrección	:	Se corrige identificación correcta de Pedidos de Linea y Especiales para flujo SIVO.
+
+SIP 11.0.0.46
+---------------------------
+--Corrección	:	Se ajusta existencias de productos de tipo Servicio, para evitar generación de pedidos de faltante.
+--Corrección	:	Se ajusta posición de Total de Prendas en pantalla de modificación de tallas.
+--Modificación	:	Se quita mensaje de OP asignadas de forma automática para el área DG.
+--Corrección	:	Se ajusta proceso de Habilitación de pedidos para integración con SIVO.
+
+SIP 11.0.0.47
+---------------------------
+--Corrección	:	Se corrige duplicidad de notificaciones.
+
+SIP 11.0.0.48
+---------------------------
+--Corrección	:	Se procesa fecha de entrega para Surtido en pedidos DAT mayores a 100 prendas.
+--Corrección	:	Se envía directo a impresión los pedidos de Mostrador con pago en efectivo o tarjeta.
+
+SIP 11.0.0.49
+---------------------------
+--Corrección	:	Se procesa fecha de entrega para Surtido en pedidos DAT mayores a 100 prendas.
+--Corrección	:	Se corrige valor de Puntadas en reporte de cargas por departamento.
+
+SIP 11.0.0.50
+---------------------------
+--Corrección	:	Se corrige carga de 100% de tallas en recepción de maquila
+--Corrección	:	Se corrigen prefijos en la captura de pedidos en SAE.
+
+SIP 11.0.0.51
+---------------------------
+--Actualización	:	Se agrega contador de Flujos por Área y Tipo de Proceso en SIVO.
+--Actualización	:	Se agrega Tipo de Pedido en UPPedidos.
+--Actualización	:	Se crea flujo automático de OP Programada cuando se genera OP de Pedidos Especiales en SIVO.
+
+SIP 11.0.0.52
+---------------------------
+--Corrección	:	Se corrigo bug de consulta de OP Programada.
+
+SIP 11.0.0.53
+---------------------------
+--Actualización	:	Se agrega reporte de departamentos de Surtido, Embarque y Empaque.
+--Actualización	:	Se modifica el nombre y orden de columnas para reporte de cargas por departamento.
+
+SIP 11.0.0.54
+---------------------------
+--Corrección	:	Se corrige salida de reporte de departamento de Estampado.
+--Corrección	:	Se corrige columna Indice en reporte de cargas por departamento.
+
+SIP 11.0.0.55
+---------------------------
+--Corrección	:	Se resta el descuento del pedido al campo "Total" en el detalle de partidas de UPPedidos.
+
+SIP 11.0.0.56
+---------------------------
+--Actualización	:	Se agrega proceso M - Empaque al alta de pedidos.
+--Actualización	:	Se ajusta reporte por departamentos para la opción empaque.
+--Actualización	:	Se ajusta asiganción de ruta para la configuración de empaque.
+
+SIP 11.0.0.57
+---------------------------
+--Actualización	:	Se agrega proceso M - Empaque al eliminar/modificar partidas.
+--Actualización	:	Se agrega Fecha de vencimiento de empaque a UPPedidos.
+--Actualización	:	Se modifica Fecha de Salida a reporte de Carga por departamentos para Empaque.
+
+SIP 11.0.0.58
+---------------------------
+--Corrección	:	Se modifica longitud de campo "Tipo Empaque".
+--Corrección	:	Se corrige guardado de precio en $0.00 para empaaque.
+
+SIP 11.0.0.59
+---------------------------
+--Actualización	:	Se modifica orden de columnas para reporte de Empaque.
+--Actualización	:	Se ejecuta proceso de inserción de proceso Empaque.
+
+SIP 11.0.0.60
+---------------------------
+--Corrección	:	Se avanza flujo SIVO para pedidos DAT con fecha de entrega.
+
+SIP 11.0.0.61
+---------------------------
+--Actualización	:	Se agrega flujo de Requisiciones de Mostrador para formato S6.
+
+SIP 11.0.0.62
+---------------------------
+--Correción	:	Se corrige el campo Talla para aceptar valores de tipo "String" al procesar la requisición de mostrador.
+
+SIP 11.0.0.63
+---------------------------
+--Correción	:	Se cambia Flujo SIVO para requisiciones de mostrador.
+
+SIP 11.0.0.64
+---------------------------
+--Modificación	:	Se modifica descripción en reporte de Requisición Mostrador
+--Modificación	:	Se agrega total de requisición en módulo de Alta de Requisición.
+
+SIP 11.0.0.65
+---------------------------
+--Modificación	:	Se bloquean columnas para captura de proceso de Empaque en la edición de pedidos.
+--Modificación	:	Se agregan las columnas "Estatus" y "Procesos" a reporte de carga x departamento para empaque.
+
+SIP 11.0.0.66
+---------------------------
+--Actualización	:	Se agrega Flujo OP para Requisiciones de Mostrador.
+
+SIP 11.0.0.67
+---------------------------
+--Actualización	:	Se agrega Proceso de Embarques.
+--Modificación	:	Ajuste de FlujoOP para requisiciones sin existencia.
+
+SIP 11.0.0.68
+---------------------------
+--Modificación	:	Se cambia longitud para dirección de entrega a 500 caracteres.

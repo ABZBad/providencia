@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{235D4096-8A3F-4A70-AFF2-98A996060C29}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ulp_bl</RootNamespace>
+    <AssemblyName>ulp_bl</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>SIP_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\NPOI.2.0.6\lib\net40\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\packages\NPOI.2.0.6\lib\net40\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\packages\NPOI.2.0.6\lib\net40\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\packages\NPOI.2.0.6\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\packages\NPOI.2.0.6\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="sm_dl">
+      <HintPath>Resources\sm_dl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActualizacionCostosConManoObra.cs" />
+    <Compile Include="ActualizacionCostosSinManoObra.cs" />
+    <Compile Include="AddPartidasPedi.cs" />
+    <Compile Include="AjusteCxC.cs" />
+    <Compile Include="AltaBeneficiarioBanco.cs" />
+    <Compile Include="AltaClienteSAE.cs" />
+    <Compile Include="AltaDeptos.cs" />
+    <Compile Include="ApartadoLiberacion35.cs" />
+    <Compile Include="AsignarRuta.cs" />
+    <Compile Include="BITA01.cs" />
+    <Compile Include="BitacoraComentarioClientes.cs" />
+    <Compile Include="CancelaPedido.cs" />
+    <Compile Include="CargaPedidosSAE.cs" />
+    <Compile Include="CatalogosSolicitudesEspeciales.cs" />
+    <Compile Include="CFDIPAC.cs" />
+    <Compile Include="CFDI.cs" />
+    <Compile Include="CLIE01.cs" />
+    <Compile Include="CLIN01.cs" />
+    <Compile Include="CMT_DET.cs" />
+    <Compile Include="CodigoBarra.cs" />
+    <Compile Include="ConfiguracionDescuentoSugerido.cs" />
+    <Compile Include="CONTAC01.cs" />
+    <Compile Include="ControlFlujo.cs" />
+    <Compile Include="ControlPedidos.cs" />
+    <Compile Include="ControlVersionesSIP.cs" />
+    <Compile Include="CLIE_CLIB01.cs" />
+    <Compile Include="Credito.cs" />
+    <Compile Include="FacturasPorAnticipado.cs" />
+    <Compile Include="FlujoControlNotificaciones.cs" />
+    <Compile Include="FlujoOP.cs" />
+    <Compile Include="GestionCorporativos.cs" />
+    <Compile Include="OrdenProduccionMasiva.cs" />
+    <Compile Include="ProspectModule.cs" />
+    <Compile Include="ProveedoresCostura.cs" />
+    <Compile Include="DDLUpdates.cs" />
+    <Compile Include="DESEMBYAREA.cs" />
+    <Compile Include="DesempByArea.cs" />
+    <Compile Include="DiasFestivos.cs" />
+    <Compile Include="DOCTOSIGF01.cs" />
+    <Compile Include="DupCodProdEstr.cs" />
+    <Compile Include="EliminarHabilitarPedidoAspelSaeSip.cs" />
+    <Compile Include="EliminarPedidosTemporales.cs" />
+    <Compile Include="Embarques.cs" />
+    <Compile Include="Enumerados.cs" />
+    <Compile Include="EstandaresPedido.cs" />
+    <Compile Include="ESTDPEDI.cs" />
+    <Compile Include="EtiquetasEmpaque.cs" />
+    <Compile Include="FACTP01.cs" />
+    <Compile Include="FiltroConta.cs" />
+    <Compile Include="FLET_MSTR.cs" />
+    <Compile Include="ICrud.cs" />
+    <Compile Include="IMAGENES.cs" />
+    <Compile Include="INSUMOS01.cs" />
+    <Compile Include="MantenimientoPedidosBordado.cs" />
+    <Compile Include="MINVE01.cs" />
+    <Compile Include="OrdMaquila.cs" />
+    <Compile Include="OrdMaquila2.cs" />
+    <Compile Include="OrdProduccion.cs" />
+    <Compile Include="PED_DET.cs" />
+    <Compile Include="PED_MSTR.cs" />
+    <Compile Include="PED_TEMP.cs" />
+    <Compile Include="Permisos\Acceso.cs" />
+    <Compile Include="Permisos\PermisosMenus.cs" />
+    <Compile Include="Permisos\Utilerias.cs" />
+    <Compile Include="PrioridaddeMaquila.cs" />
+    <Compile Include="PROCESOS01.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Permisos\PermisosUsuarioEspeciales.cs" />
+    <Compile Include="PROV01.cs" />
+    <Compile Include="ProveedoresFletes.cs" />
+    <Compile Include="PT_DET01.cs" />
+    <Compile Include="RecepcionFacturas.cs" />
+    <Compile Include="RecOrdProduccionMaquila.cs" />
+    <Compile Include="RecOrdProduccionMaquilaCodigoBarras.cs" />
+    <Compile Include="RegenerarCarteraViva.cs" />
+    <Compile Include="RepCostoVsProceso.cs" />
+    <Compile Include="ReporteAnalisisRetrasosOP.cs" />
+    <Compile Include="ReporteClientesDRvsDS.cs" />
+    <Compile Include="ReporteComparativoRealVsLista.cs" />
+    <Compile Include="ReporteFacturacionCredito.cs" />
+    <Compile Include="ReporteGrupoCarso.cs" />
+    <Compile Include="ReporteMovimientosMP.cs" />
+    <Compile Include="ReporteProvisionNomina.cs" />
+    <Compile Include="Reportes\CaptCostProcs.cs" />
+    <Compile Include="Reportes\RepCargaxDepto.cs" />
+    <Compile Include="Reportes\RepCostoUltimoPP.cs" />
+    <Compile Include="Reportes\RepCostoUltimoPT.cs" />
+    <Compile Include="Reportes\RepCostoVsPrecEstampado.cs" />
+    <Compile Include="Reportes\RepCostoVsPrecCostura.cs" />
+    <Compile Include="Reportes\RepCostoVsPrecFlete.cs" />
+    <Compile Include="Reportes\RepDatosFacturaBordado.cs" />
+    <Compile Include="Reportes\RepExisXAlm.cs" />
+    <Compile Include="Reportes\RepOrdProd.cs" />
+    <Compile Include="Reportes\RepClientesRecuperados.cs" />
+    <Compile Include="Reportes\RepPartArt.cs" />
+    <Compile Include="Reportes\RepPed20Dias.cs" />
+    <Compile Include="Reportes\EmisionCartera.cs" />
+    <Compile Include="Reportes\RepProgramaEmpaque.cs" />
+    <Compile Include="Reportes\RepRecepcionMaquila.cs" />
+    <Compile Include="Reportes\RepUniversoPedidosEmpaque.cs" />
+    <Compile Include="Reportes\SipReportesContext.cs" />
+    <Compile Include="Reportes\vw_ExistenciasBase.cs" />
+    <Compile Include="Reportes\RepPromCobra.cs" />
+    <Compile Include="Reportes\RepVentPesosPrendas.cs" />
+    <Compile Include="Reportes\vw_FactFFoliosAntPrendas.cs" />
+    <Compile Include="Reportes\vw_UpPedidos.cs" />
+    <Compile Include="Reportes\vw_UpPedidosSae.cs" />
+    <Compile Include="RepPedidosDSyCMP.cs" />
+    <Compile Include="RepStaff.cs" />
+    <Compile Include="RepTransAlmacen1.cs" />
+    <Compile Include="RequisicionMostrador.cs" />
+    <Compile Include="RequisicionPedido.cs" />
+    <Compile Include="RetroAlimManObra.cs" />
+    <Compile Include="RetroAlimManObraPedido.cs" />
+    <Compile Include="SimuladorCostos.cs" />
+    <Compile Include="SOLICITUDES_ESPECIALES.cs" />
+    <Compile Include="StandPedi.cs" />
+    <Compile Include="TransferenciaPorModelo.cs" />
+    <Compile Include="TransferenciaPorPedido.cs" />
+    <Compile Include="UPPEDIDOS.cs" />
+    <Compile Include="UpPedidosLog.cs" />
+    <Compile Include="Usuario.cs" />
+    <Compile Include="USUARIOS.cs" />
+    <Compile Include="Catalogos.cs" />
+    <Compile Include="BENEF.cs" />
+    <Compile Include="Utiles\ConnectionInfo.cs" />
+    <Compile Include="Utiles\CopyClass.cs" />
+    <Compile Include="Utiles\DDL.cs" />
+    <Compile Include="Utiles\EmbeddedResoures.cs" />
+    <Compile Include="Utiles\ExcelNpoiUtil.cs" />
+    <Compile Include="ReporteArticulosCliente.cs" />
+    <Compile Include="SimuladorCompra.cs" />
+    <Compile Include="Utiles\Seguridad.cs" />
+    <Compile Include="Utiles\Varios.cs" />
+    <Compile Include="U_DEPARTAMENTO.cs" />
+    <Compile Include="vw_Clientes.cs" />
+    <Compile Include="vw_EstadoCuenta.cs" />
+    <Compile Include="vw_Inventario.cs" />
+    <Compile Include="_Globales_.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ulp_dl\ulp_dl.csproj">
+      <Project>{99adf3a2-e11a-4c5a-8db7-a2a6e869157d}</Project>
+      <Name>ulp_dl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="SIP_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\CreateTableDLLControl.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\AlterUsp_BuscaPedidosPorCriterio.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_inventario_con_pedido.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RepReconstruccionYCosteo.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RepReconsYConteoMermas_CMO.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RepPedidosMas20Dias.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RegresaRutasPorPedido.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RepFacturaXMaquilador.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_Inserta_PED_TEMP_de_PED_DET.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\udf_Regresa_procesos_por_pedido_y_agrupador.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RepExistResumen.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RepExistBaseMin.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RepVentPesosPrendas.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RegenerarCarteraViva.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_EntradaAFabricacionOPManual.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_frmTransferenciaXModeloProcesar.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\vw_Inventario.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_Permisos_CreaAccesosLogos.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\CreateTableLogUPPEDIDOS.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_Permisos_CreaAccesosUPPedidos.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RepExistResumen2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_OrdenTrabajo.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_Pedido.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_frmTransferenciaXPedidoProcesar.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\r_CMT_DET.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RepStaff.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_frmTransferenciaXModeloProcesar2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RecOrdProduccionMaquiaProcesar.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RecOrdProduccionMaquiaProcesar1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_ActualizacionCostosConManoObra.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RepUniversoPedidosEmpaque.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RecOrdProduccionMaquia.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\r_Permisos_CreaAccesosPestanasCliente.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_Pedido1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RepEstadoCuentaXDepto.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RepPedidosMas20Dias1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\r_CreaAccesosYMenuRepCostura.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RepCostoVsPrecioFlete.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\CreateTableCOST_ENLA.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\CreateTableCOST_MSTR.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\udf_RegresaFacturasPorPedidoCostura.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_DocumentosPorPedidoCostura.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\r_CMT_DET2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RepCostoVsPrecioFlete1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_ActualizaUPPedidosCapturaSae.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_EntradaAFabricacionOPManual1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RepRecepcionMaquila.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_Inserta_PED_TEMP_de_PED_DET1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RepVentPesosPrendas1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RepDesmpeñoPorAreasResumen.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RepFechasYDesempeñoPorArea.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RepDesmpeñoPorAreasResumen1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RepVentPesosPrendas2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RepExistResumen3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\r_CMT_DET3.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_EntradaAFabricacionOPManual2.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\r_Permisos_CreaAccesosTransferenciaInv.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\r_CreaAccesosYMenuCxC.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_ProcesoAjusteSaldo.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DDL\usp_RegresaSaldosCxC.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

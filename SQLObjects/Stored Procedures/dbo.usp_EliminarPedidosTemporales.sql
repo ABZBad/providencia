@@ -1,0 +1,10 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[usp_EliminarPedidosTemporales]
+	
+AS
+	DELETE FROM aspel_sae50.dbo.PED_TEMP
+	
+GO

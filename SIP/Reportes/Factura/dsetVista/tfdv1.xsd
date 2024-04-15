@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="tfdv1" targetNamespace="http://tempuri.org/tfdv1.xsd" xmlns:mstns="http://tempuri.org/tfdv1.xsd" xmlns="http://tempuri.org/tfdv1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="tfdv1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="tfdv1" msprop:Generator_UserDSName="tfdv1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TimbreFiscalDigital" msprop:Generator_TableClassName="TimbreFiscalDigitalDataTable" msprop:Generator_TableVarName="tableTimbreFiscalDigital" msprop:Generator_RowChangedName="TimbreFiscalDigitalRowChanged" msprop:Generator_TablePropName="TimbreFiscalDigital" msprop:Generator_RowDeletingName="TimbreFiscalDigitalRowDeleting" msprop:Generator_RowChangingName="TimbreFiscalDigitalRowChanging" msprop:Generator_RowEvHandlerName="TimbreFiscalDigitalRowChangeEventHandler" msprop:Generator_RowDeletedName="TimbreFiscalDigitalRowDeleted" msprop:Generator_RowClassName="TimbreFiscalDigitalRow" msprop:Generator_UserTableName="TimbreFiscalDigital" msprop:Generator_RowEvArgName="TimbreFiscalDigitalRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="version" msprop:Generator_ColumnVarNameInTable="columnversion" msprop:Generator_ColumnPropNameInRow="version" msprop:Generator_ColumnPropNameInTable="versionColumn" msprop:Generator_UserColumnName="version" type="xs:string" minOccurs="0" />
+              <xs:element name="UUID" msprop:Generator_ColumnVarNameInTable="columnUUID" msprop:Generator_ColumnPropNameInRow="UUID" msprop:Generator_ColumnPropNameInTable="UUIDColumn" msprop:Generator_UserColumnName="UUID" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaTimbrado" msprop:Generator_ColumnVarNameInTable="columnFechaTimbrado" msprop:Generator_ColumnPropNameInRow="FechaTimbrado" msprop:Generator_ColumnPropNameInTable="FechaTimbradoColumn" msprop:Generator_UserColumnName="FechaTimbrado" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SelloCFD" msprop:Generator_ColumnVarNameInTable="columnSelloCFD" msprop:Generator_ColumnPropNameInRow="SelloCFD" msprop:Generator_ColumnPropNameInTable="SelloCFDColumn" msprop:Generator_UserColumnName="SelloCFD" type="xs:string" minOccurs="0" />
+              <xs:element name="NoCertificadoSAT" msprop:Generator_ColumnVarNameInTable="columnNoCertificadoSAT" msprop:Generator_ColumnPropNameInRow="NoCertificadoSAT" msprop:Generator_ColumnPropNameInTable="NoCertificadoSATColumn" msprop:Generator_UserColumnName="NoCertificadoSAT" type="xs:string" minOccurs="0" />
+              <xs:element name="SelloSAT" msprop:Generator_ColumnVarNameInTable="columnSelloSAT" msprop:Generator_ColumnPropNameInRow="SelloSAT" msprop:Generator_ColumnPropNameInTable="SelloSATColumn" msprop:Generator_UserColumnName="SelloSAT" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
